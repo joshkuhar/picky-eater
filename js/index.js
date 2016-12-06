@@ -6,13 +6,17 @@ var Router = router.Router;
 var Route = router.Route;
 var hashHistory = router.hashHistory;
 var IndexRoute = router.IndexRoute;
+var Provider = require('react-redux').Provider;
+var store = require('./store');
 
 var LocationContainer = require('./components/location-container');
 
 var routes = (
-    <Router history={hashHistory}>
-        <Route path="/location" component={LocationContainer} />
-    </Router>
+	<Provider store={store}>
+	    <Router history={hashHistory}>
+	        <Route path="/location" component={LocationContainer} />
+	    </Router>
+	</Provider>
 );
 
 
