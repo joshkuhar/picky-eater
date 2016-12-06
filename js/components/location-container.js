@@ -1,29 +1,30 @@
 var React = require('react');
+var connect = require('react-redux').connect;
+var actions = require('../actions/index');
 var Data = require('../data');
 var Location = require('./location');
 
 var Local = React.createClass({
-	getInitialState: function(){
-		return {
-			name: Data.locations.pizza,
-			index: 2
-		}
-	},
 	onClick: function(){
-		var place = Object.keys(Data.locations);
-		this.setState({
-			name: Data.locations[place[this.state.index % 3]],
-			index: this.state.index + 1
-		})
+		this.props.dispatch(actions.changeLocation("Taco Bell"));
 	},
 	render: function() {
 		return(
 		<div>
-			<Location name={this.state.name} onClick={this.onClick}/>
+			<Location name={this.props.place} onClick={this.onClick}/>
 		</div>
 		)
 	}
 });
+var mapStateToProps = function(state, props) {
+    return {
+        place: state.restaurant
+    };
+};
 
-module.exports = Local;
+
+var Container = connect(mapStateToProps)(Local);
+
+module.exports = Container;
+
 
