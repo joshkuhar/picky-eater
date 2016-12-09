@@ -3,8 +3,7 @@ var Data = {
 		pizza: "Pizza Hut",
 		tacos: "Taco Bell",
 		chicken: "KFC",
-		burgers: "Burger King",
-		gourmet: "In and Out"
+		burgers: "Burger King"
 	}
 };
 
