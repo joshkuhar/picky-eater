@@ -5,7 +5,6 @@ var Location = function(props){
 		<div>
 			<div>{props.name}</div>
 			<div>{props.address}</div>
-			<button onClick={props.onClick}>Click Me</button>
 		</div>
 		)
 };

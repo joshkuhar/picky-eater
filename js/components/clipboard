@@ -1,0 +1,21 @@
+fetch(){
+		var url = "https://api.foursquare.com/v2/venues/search?";
+		var ClId = "client_id=LT5PEZMUYPGXVYMZX0BDR1O2001DFRSKWV2DWI3AFFEPDWJZ";
+		var secret = "&client_secret=MYGCCF0ENAGRFLGAUKMOKYFIDJGULKUW0V0Q3UENAWVO2R2P";
+		var v = "&v=20161121";
+		var ll = "&ll=39.9,-75.1";
+		var query = "&query=sushi";
+		var m = "$m=foursquare";
+        return fetch(url+ClId+secret+v+ll+query+m)  
+	        .then(function(response) {
+	            return response.json();
+	        })
+	        .then(function(data) {
+	        	console.log(data);
+	           	return update({greeting: "bang"});
+	        })
+	        .catch(function(error) {
+	            console.log(error);
+	            return error;
+	        });
+		},
