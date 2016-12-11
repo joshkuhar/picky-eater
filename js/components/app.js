@@ -1,10 +1,12 @@
 var React = require('react');
 var store = require('../store');
 var Button = require('./button');
+var Cats = require('./cat-list-container');
 
 var App = React.createClass({
 	onClick: function(){
 		console.log(store.getState());
+
 	},
 	render: function(){
 
