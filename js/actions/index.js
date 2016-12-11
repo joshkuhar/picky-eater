@@ -1,4 +1,6 @@
 require('isomorphic-fetch');
+var Calls = require('./api-Calls');
+var Parsed = require('./functions');
 
 var CHANGE_LOCATION = 'CHANGE_LOCATION';
 var changeLocation = function(location){
@@ -24,7 +26,6 @@ exports.getLocations = getLocations;
 
 var FETCH_SUCCESS = 'FETCH_SUCCESS';
 var fetchSuccess = function(data) {
-	console.log(data);
 	return {
 		type: FETCH_SUCCESS,
 		data: data
@@ -38,14 +39,7 @@ exports.fetchSuccess = fetchSuccess;
 
 var fetchLocations = function() {
     return function(dispatch) {
-        var url = "https://api.foursquare.com/v2/venues/search?"; 
-        var ClId = "client_id=LT5PEZMUYPGXVYMZX0BDR1O2001DFRSKWV2DWI3AFFEPDWJZ";
-        var secret = "&client_secret=MYGCCF0ENAGRFLGAUKMOKYFIDJGULKUW0V0Q3UENAWVO2R2P";
-       	var v = "&v=20161121";
-		var ll = "&ll=39.9,-75.1";
-		var query = "&query=sushi";
-		var m = "$m=foursquare";
-        return fetch(url+ClId+secret+v+ll+query+m).then(function(response) {
+        return fetch(Calls.play).then(function(response) {
             if (response.status < 200 || response.status >= 300) {
                 var error = new Error(response.statusText)
                 error.response = response
@@ -57,6 +51,7 @@ var fetchLocations = function() {
             return response.json();
         })
         .then(function(data) {
+            Parsed.parsed(data);
             return dispatch(
                 fetchSuccess(data)
             );
@@ -68,6 +63,31 @@ var fetchLocations = function() {
 };
 
 exports.fetchLocations = fetchLocations;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
