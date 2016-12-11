@@ -2,6 +2,7 @@ var React = require('react');
 var store = require('../store');
 var connect = require('react-redux').connect;
 var actions = require('../actions/index');
+var RandomPlaces = require('../actions/functions')
 var Button = require('./button');
 var Locations = require('./location-list');
 var Data = require('../data');
