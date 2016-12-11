@@ -13,7 +13,7 @@ var store = require('./store');
 var App = require('./components/app');
 var Offer = require('./components/offer-container');
 var Result = require('./components/offer-result');
-var LocationContainer = require('./components/location-container');
+var CatContainer = require('./components/cat-list-container');
 var LocationList = require('./components/location-list-container');
 
 var routes = (
@@ -24,7 +24,7 @@ var routes = (
 	    			<Route path="/offer/result" component={Result} />
 	    		</Route>
 	    		<Route path="/result" component={Result} />
-	        	<Route path="/location" component={LocationContainer} />
+	        	<Route path="/location" component={CatContainer} />
 	        	<Route path="/locations" component={LocationList} />
 	        </Route>
 	    </Router>
