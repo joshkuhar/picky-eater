@@ -1,32 +1,45 @@
 var React = require('react');
+var router = require('react-router');
 var store = require('../store');
 var connect = require('react-redux').connect;
 var actions = require('../actions/index');
-var Button = require('./button');
+var Link = router.Link;
 var Location = require('./location');
+var Button = require('./button');
 
-var Local = React.createClass({
-	onClick: function() {
-		var state = store.getState();
-		var places = Object.keys(state.data.locations);
-		var eatery = state.data.locations[places[state.index % places.length]];
-		this.props.dispatch(actions.changeLocation(eatery));
+var LocationType = React.createClass({
+	componentWillMount: function(){
+		console.log("I am the params dsdsds ",  this.props.params.locationId)
+		this.props.dispatch(actions.fetchLocations(this.props.params.locationId));
+		//this.props.dispatch(actions.getOffer(this.props.params.local));
 	},
-	render: function() {
-		return(
-		<div>
-			<Location name={this.props.place} onClick={this.onClick} />
-			<Button name="Click Me" onClick={this.onClick} />
-		</div>
-		)
+	render: function(){
+		console.log("foo props.address", this.props.address);
+		return (
+				<div>
+					<div>I am the location container.</div>
+					<div>{this.props.name}</div>
+					<div>{this.props.address}</div>
+					<div>{this.props.locationId}</div>
+					<Link to={"/locations/" + this.props.params.locationId +"/"+ this.props.locationId}>select</Link>
+				</div>			
+				)
 	}
 });
+
+
 var mapStateToProps = function(state, props) {
     return {
-        place: state.restaurant
+        name: state.name,
+        address: state.address,
+        locationId: state.locationId
     };
 };
 
-var Container = connect(mapStateToProps)(Local);
+var Container = connect(mapStateToProps)(LocationType);
 
 module.exports = Container;
+	{/*
+
+
+	*/}
