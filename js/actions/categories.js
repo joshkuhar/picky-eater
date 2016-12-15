@@ -1,11 +1,6 @@
 var Categories = {
 	international: [
 	{
-		place: "Afghan Restaurant",
-		id: "503288ae91d4c4b30a586d67",
-		shortName: "Afghan"
-	},
-	{
 		place: "African Restaurant",
 		id: "4bf58dd8d48988d1c8941735",
 		shortName: "African"
@@ -14,16 +9,6 @@ var Categories = {
 		place: "Asian Restaurant",
 		id: "4bf58dd8d48988d142941735",
 		shortName: "Asian"
-	},
-	{
-		place: "Australian Restaurant",
-		id: "4bf58dd8d48988d169941735",
-		shortName: "Australian"
-	},
-	{
-		place: "Austrian Restaurant",
-		id: "52e81612bcbc57f1066b7a01",
-		shortName: "Austrian"
 	},
 	{
 		place: "Belgian Restaurant",
@@ -39,16 +24,6 @@ var Categories = {
 		place: "Caribbean Restaurant",
 		id: "4bf58dd8d48988d144941735",
 		shortName: "Caribbean"
-	},
-	{
-		place: "Czech Restaurant",
-		id: "52f2ae52bcbc57f1066b8b81",
-		shortName: "Czech"
-	},
-	{
-		place: "Dutch Restaurant",
-		id: "5744ccdfe4b0c0459246b4d0",
-		shortName: "Dutch"
 	},
 	{
 		place: "Eastern European Restaurant",
@@ -75,11 +50,6 @@ var Categories = {
 		place: "Halal Restaurant",
 		id: "52e81612bcbc57f1066b79ff",
 		shortName: "Halal"
-	},
-	{
-		place: "Hungarian Restaurant",
-		id: "52e81612bcbc57f1066b79fa",
-		shortName: "Hungarian"
 	},
 	{
 		place: "Indian Restaurant",
@@ -127,72 +97,21 @@ var Categories = {
 		shortName: "Modern European"
 	},
 	{
-		place: "Pakistani Restaurant",
-		id: "52e81612bcbc57f1066b79f8",
-		shortName: "Pakistani"
-	},
-	{
 		place: "Polish Restaurant",
 		id: "52e81612bcbc57f1066b7a04",
 		shortName: "Polish"
 	},
-	{
-		place: "Portuguese Restaurant",
-		id: "4def73e84765ae376e57713a",
-		shortName: "Portuguese"
-	},
-	{
-		place: "Poutine Place",
-		id: "56aa371be4b08b9a8d5734c7",
-		shortName: "Poutine Place"
-	},
-	{
-		place: "Russian Restaurant",
-		id: "5293a7563cf9994f4e043a44",
-		shortName: "Russian"
-	},
-
-	{
-		place: "Slovak Restaurant",
-		id: "56aa371be4b08b9a8d57355a",
-		shortName: "Slovak"
-	},
-
 	{
 		place: "Spanish Restaurant",
 		id: "4bf58dd8d48988d150941735",
 		shortName: "Spanish"
 	},
 	{
-		place: "Sri Lankan Restaurant",
-		id: "5413605de4b0ae91d18581a9",
-		shortName: "Sri Lankan"
-	},
-	{
-		place: "Swiss Restaurant",
-		id: "4bf58dd8d48988d158941735",
-		shortName: "Swiss"
-	},
-	{
 		place: "Turkish Restaurant",
 		id: "4f04af1f2fb6e1c99f3db0bb",
 		shortName: "Turkish"
-	},
-	{
-		place: "Ukrainian Restaurant",
-		id: "52e928d0bcbc57f1066b7e96",
-		shortName: "Ukrainian"
-	},
-	{
-		place: "Scandinavian Restaurant",
-		id: "4bf58dd8d48988d1c6941735",
-		shortName: "Scandinavian"
-	},
-	{
-		place: "Scottish Restaurant",
-		id: "5744ccdde4b0c0459246b4a3",
-		shortName: "Scottish"
 	}
+	
 ],
 	fun: [
 		{
