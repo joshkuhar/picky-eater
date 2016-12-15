@@ -8,22 +8,17 @@ var Button = require('./button');
 var Location = require('./location');
 
 var Locations = function(props) {
-	var x = props.locations;
 	var places =[];
-	for (var i = 0; i<x.length; i++) {
-		var index = x[i];
-		var place = index.name;
-		var locationId = index.id;
-		if (index.location.address) {		
-			places.push(
-				<div key={index.id}>
-					<Location locationId={index.id} name={place} address={index.location.address}/>
-					<div>{index.categories[0].shortName}</div>
-					<div>{"I am the test"}</div>
-					<Link to={"/offer/" + locationId} ><Button name="Select" onClick={props.onClick}/></Link>
-				</div>
-				)
-		}
+	for (var index = 0; index<props.locations.length; index++) {
+		var singleLocation = props.locations[index];
+		var shortName = singleLocation.shortName;
+		var locationId = singleLocation.id;	
+		places.push(
+			<div key={index}>
+				<Location locationId={locationId} name={shortName} />
+				<Link to={"/locations/" + locationId} ><Button name="Select" /></Link>
+			</div>
+			)
 	}
 	return (
 		<div>
