@@ -10,3 +10,4 @@ var Location = function(props){
 };
 
 module.exports = Location;
+
