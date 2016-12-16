@@ -9,8 +9,6 @@ var Categories = require('../actions/categories');
 
 var LocationList = React.createClass({
 	onClick: function() {
-		console.log("i was clicked");
-		
 		var randomPlaces = Object.keys(Categories).map(function(place, index){
 			return Categories[place][Math.floor((Math.random() * Categories[place].length-1) + 1)]
 			});
@@ -28,11 +26,12 @@ var LocationList = React.createClass({
 	render: function() {
 
 		return(
-			<div>
-				<Timer time={this.props.time} />
-				<Button name="Play" onClick={this.onClick} />
-				<Locations locations={this.props.locations}  />
-			</div>
+
+				<div>
+					<Button name="Shuffle" onClick={this.onClick} />
+					<Locations locations={this.props.locations}  />
+				</div>
+
 			)
 	}
 });

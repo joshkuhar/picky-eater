@@ -17,7 +17,7 @@ var Locations = function(props) {
 		places.push(
 			<div key={index}>
 				<Location locationId={locationId} name={shortName} />
-				<Link to={"/locations/" + locationId} ><Button name="Select" /></Link>
+				<Link to={"/locations/play/" + locationId} ><Button name="Select" /></Link>
 			</div>
 			)
 	}
