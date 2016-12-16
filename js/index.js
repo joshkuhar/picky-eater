@@ -12,8 +12,9 @@ var Provider = require('react-redux').Provider;
 var store = require('./store');
 
 var App = require('./components/app');
+var Search = require('./components/search-container');
 var LocationList = require('./components/location-list-container');
-var Location = require('./components/location-container');
+var Offer = require('./components/offer-container');
 var LocationDetails = require('./components/location-details-container');
 
 var Page404 = require('./components/page404');
@@ -26,8 +27,9 @@ var Routes = (
 	<Provider store={store} >
 		<Router history={hashHistory}>
 			<Route path="/locations" component={App}>
-				<IndexRoute component={LocationList} />
-				<Route path=":locationId" component={Location} />
+				<IndexRoute component={Search} />
+				<Route path="play" component={LocationList} />
+				<Route path=":locationId" component={Offer} />
 				<Route path=":locationId/:locationDetailsId" component={LocationDetails} />
 			</Route>
 	    </Router>
