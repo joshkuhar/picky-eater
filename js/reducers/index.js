@@ -23,6 +23,9 @@ var locationReducer = function(state, action) {
 			categoriesCount: categoriesCount
 		}
 	} 
+	else if (action.type === actions.SAVE_LOCATION) {
+		return {searchText: action.searchText}
+	}
 	else if (action.type === actions.GET_OFFER) {
 		return {address: action.location + " I am the placeholder address, woooo"}
 	} //
@@ -31,7 +34,8 @@ var locationReducer = function(state, action) {
 			name: action.data.response.venues[0].name,
 			address: action.data.response.venues[0].location.address,
 			locationId: action.data.response.venues[0].id,
-			verified: action.data.response.venues[0].verified
+			verified: action.data.response.venues[0].verified,
+			places: state.places
 		}
 	}
 	else if (action.type === actions.FETCH_LOCATION_SUCCESS) {
@@ -39,7 +43,8 @@ var locationReducer = function(state, action) {
 		return {
 			name: action.name,
 			address: action.address,
-			rating: action.rating
+			rating: action.rating,
+			places: state.places
 		}
 	}
 	else if(action.type === actions.COUNTDOWN) {
