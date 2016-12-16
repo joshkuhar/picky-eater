@@ -1,5 +1,17 @@
 require('isomorphic-fetch');
 
+var SAVE_LOCATION = 'SAVE_LOCATION';
+var saveLocation = function(searchText){
+    console.log(searchText, 'dfsdfsfd');
+    return {
+        type: SAVE_LOCATION,
+        searchText: searchText
+    }
+};
+
+exports.SAVE_LOCATION = SAVE_LOCATION;
+exports.saveLocation = saveLocation;
+
 var GET_OFFER = 'GET_OFFER';
 var getOffer = function(location){
 	return {
@@ -84,7 +96,7 @@ var fetchLocations = function(id) {
             return response.json();
         })
         .then(function(data) {
-            //Parsed.parsed(data);
+            console.log("Second fetch worked");
             return dispatch(
                 fetchSuccess(data)
             );
