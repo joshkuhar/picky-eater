@@ -13,6 +13,9 @@ var App = React.createClass({
 			<Button name="Store" onClick={this.onClick} />
 			<div>
 				<h3>Locations</h3>
+				<div>Instructions</div>
+				<div>About</div>
+				<div>Play</div>
 			</div>
 			<div>
 				{this.props.children}
