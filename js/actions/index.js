@@ -1,11 +1,13 @@
 require('isomorphic-fetch');
 
 var SAVE_LOCATION = 'SAVE_LOCATION';
-var saveLocation = function(searchText){
+var saveLocation = function(searchText, locations){
     console.log(searchText, 'dfsdfsfd');
     return {
         type: SAVE_LOCATION,
-        searchText: searchText
+        searchText: searchText,
+        locations: locations
+
     }
 };
 
@@ -14,7 +16,7 @@ exports.saveLocation = saveLocation;
 
 var GET_OFFER = 'GET_OFFER';
 var getOffer = function(location){
-	return {
+	return {   
 		type: GET_OFFER,
 		location: location
 		};
@@ -25,6 +27,7 @@ exports.getOffer = getOffer;
 
 var GET_LOCATIONS = 'GET_LOCATIONS';
 var getLocations = function(locations) {
+    console.log("get_locations");
 	return {
 		type: GET_LOCATIONS,
 		locations: locations
@@ -69,19 +72,19 @@ var countDown = function(){
 exports.COUNTDOWN = COUNTDOWN;
 exports.countDown = countDown;
 
-var fetchLocations = function(id) {
+var fetchLocations = function(id, searchText) {
     var p = {
         url: "https://api.foursquare.com/v2/venues/search?",
         clId: "client_id=LT5PEZMUYPGXVYMZX0BDR1O2001DFRSKWV2DWI3AFFEPDWJZ",
         secret: "&client_secret=MYGCCF0ENAGRFLGAUKMOKYFIDJGULKUW0V0Q3UENAWVO2R2P",
         v: "&v=20161201",
-        near: "&near=philadelphia,pa",
+        near: "&near=",
         categoryId: "&categoryId=",
         limit: "&limit=50",
         radius: "&radius=3000",
         m: "&m=foursquare"
     };
-    var play = p.url + p.clId + p.secret + p.v + p.near + p.categoryId + id + p.limit + p.radius + p.m;
+    var play = p.url + p.clId + p.secret + p.v + p.near + searchText + p.categoryId + id + p.limit + p.radius + p.m;
 
     return function(dispatch) {
         return fetch(play).then(function(response) {
@@ -96,9 +99,11 @@ var fetchLocations = function(id) {
             return response.json();
         })
         .then(function(data) {
-            console.log("Second fetch worked");
+            var location = data.response.venues;
+            var randomLocation = location[Math.floor((Math.random() * location.length-1) + 1)];
+            console.log(randomLocation);
             return dispatch(
-                fetchSuccess(data)
+                fetchSuccess(randomLocation)
             );
         })
         .catch(function(error) {
