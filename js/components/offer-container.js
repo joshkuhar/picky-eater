@@ -12,7 +12,7 @@ var Offer = require('./offer');
 var LocationType = React.createClass({
 	componentWillMount: function(){
 		console.log("I am the params dsdsds ",  this.props.params.locationId)
-		this.props.dispatch(actions.fetchLocations(this.props.params.locationId));
+		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
 	},
 	render: function(){
 		return (
@@ -29,7 +29,9 @@ var mapStateToProps = function(state, props) {
         name: state.name,
         address: state.address,
         locationId: state.locationId,
-        places: state.places
+        places: state.places,
+        searchText: state.searchText
+
     };
 };
 
