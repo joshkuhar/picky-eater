@@ -35,7 +35,7 @@ var Offer = function(props){
 			
 			<h4>Second Offer</h4>
 			<div>Hidden</div>
-			<Link to={"/locations/" + props.locationId +"/"+ secondOffer[secondOfferId].id}><Button name="I'll Take It"/></Link>
+			<Link to={"/locations/play/" + props.locationId +"/"+ secondOffer[secondOfferId].id}><Button name="I'll Take It"/></Link>
 		</div>
 		)
 };
