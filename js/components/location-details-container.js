@@ -14,7 +14,7 @@ var Location = require('./location');
 var Location = React.createClass({
 	componentWillMount: function(){
 		console.log("second fetch", this.props.params.locationDetailsId);
-		this.props.dispatch(actions.fetchSingleLocation(this.props.params.locationDetailsId));
+		this.props.dispatch(actions.fetchLocations(this.props.params.locationDetailsId));
 	},
 	render: function() {
 		return (
@@ -32,9 +32,11 @@ var Location = React.createClass({
 
 var mapStateToProps = function(state, props) {
     return {
-        name: state.name,
-        address: state.address,
-        rating: state.rating
+		name: state.name,
+		address: state.address,
+		locationId: state.locationId,
+		verified: state.verified,
+		places: state.places
     };
 };
 

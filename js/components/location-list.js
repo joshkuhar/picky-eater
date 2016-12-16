@@ -13,6 +13,7 @@ var Locations = function(props) {
 		var singleLocation = props.locations[index];
 		var shortName = singleLocation.shortName;
 		var locationId = singleLocation.id;	
+		console.log(singleLocation, locationId, shortName)
 		places.push(
 			<div key={index}>
 				<Location locationId={locationId} name={shortName} />
