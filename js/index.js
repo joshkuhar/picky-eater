@@ -28,9 +28,9 @@ var Routes = (
 		<Router history={hashHistory}>
 			<Route path="/locations" component={App}>
 				<IndexRoute component={Search} />
-				<Route path="play" component={LocationList} />
-				<Route path=":locationId" component={Offer} />
-				<Route path=":locationId/:locationDetailsId" component={LocationDetails} />
+				<Route path="play"component={LocationList} />
+				<Route path="play/:locationId" component={Offer} />
+				<Route path="play/:locationId/:locationDetailsId" component={LocationDetails} />
 			</Route>
 	    </Router>
 	</Provider>
