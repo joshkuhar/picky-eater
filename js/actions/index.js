@@ -1,15 +1,25 @@
 require('isomorphic-fetch');
 
 var SAVE_LOCATION = 'SAVE_LOCATION';
-var saveLocation = function(searchText, locations){
+var saveLocation = function(searchText, categories){
     return {
         type: SAVE_LOCATION,
         searchText: searchText,
-        locations: locations
+        categories: categories
     }
 };
 exports.SAVE_LOCATION = SAVE_LOCATION;
 exports.saveLocation = saveLocation;
+
+var GET_CATEGORIES = 'GET_CATEGORIES';
+var getCategories = function(categories) {
+    return {
+        type: GET_CATEGORIES,
+        categories: categories
+    }
+};
+exports.GET_CATEGORIES = GET_CATEGORIES;
+exports.getCategories = getCategories;
 
 var GET_OFFER = 'GET_OFFER';
 var getOffer = function(location){
@@ -31,15 +41,7 @@ var cacheLocation = function(location) {
 exports.CACHE_LOCATION = CACHE_LOCATION;
 exports.cacheLocation = cacheLocation;
 
-var GET_LOCATIONS = 'GET_LOCATIONS';
-var getLocations = function(locations) {
-	return {
-		type: GET_LOCATIONS,
-		locations: locations
-	}
-};
-exports.GET_LOCATIONS = GET_LOCATIONS;
-exports.getLocations = getLocations;
+
 
 var FETCH_SUCCESS = 'FETCH_SUCCESS';
 var fetchSuccess = function(data) {

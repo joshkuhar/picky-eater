@@ -5,9 +5,13 @@ var router = require('react-router');
 var Link = router.Link;
 
 var App = React.createClass({
+	onClick: function(){
+		console.log(store.getState());
+	},
 	render: function(){
 	return(
 		<div>
+			<button onClick={this.onClick}>store</button>
 			<div>
 				<h2 className="headline">Restaraunt Picker</h2>
 				<div className="nav-bar">

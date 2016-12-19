@@ -14,7 +14,7 @@ var store = require('./store');
 var App = require('./components/app');
 var Instructions = require('./components/instructions');
 var Search = require('./components/search-container');
-var LocationList = require('./components/location-list-container');
+var CategoryList = require('./components/category-names-list-container');
 var Offer = require('./components/offer-container');
 var OfferDetails = require('./components/offer-details-container');
 
@@ -26,7 +26,7 @@ var Routes = (
 			<Route path="/locations" component={App}>
 				<IndexRoute component={Search} />
 				<Route path="instructions" component={Instructions} />
-				<Route path="play"component={LocationList} />
+				<Route path="play"component={CategoryList} />
 				<Route path="play/:locationId" component={Offer} />
 				<Route path="play/:locationId/:locationDetailsId" component={OfferDetails} />
 			</Route>

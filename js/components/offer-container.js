@@ -4,13 +4,14 @@ var store = require('../store');
 var connect = require('react-redux').connect;
 var actions = require('../actions/index');
 var Link = router.Link;
-var Location = require('./location');
 var Categories = require('../actions/categories');
 var Button = require('./button');
 var Offer = require('./offer');
 
 var LocationType = React.createClass({
 	componentDidMount: function(){
+		console.log("I'm two");
+		console.log({props: this.props.params});
 		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
 	},
 	onClick: function (){
@@ -18,7 +19,7 @@ var LocationType = React.createClass({
 	},
 	render: function(){
 		return (
-			<Offer secondOffer={this.props.places} locationId={this.props.params.locationId} name={this.props.name} onClick={this.onClick}/>
+			<Offer secondOffer={this.props.categories} locationId={this.props.params.locationId} name={this.props.name} onClick={this.onClick}/>
 				)
 	}
 });
@@ -28,7 +29,7 @@ var mapStateToProps = function(state, props) {
         name: state.name,
         address: state.address,
         locationId: state.locationId,
-        places: state.places,
+        categories: state.categories,
         searchText: state.searchText
 
     };

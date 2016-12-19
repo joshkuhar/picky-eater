@@ -3,7 +3,7 @@ var Data = require('../data');
 
 var initialState = {
 	restaurant: Data.locations.pizza,
-	places: "",
+	categories: "",
 	data: Data,
 	searchText: ""
 };
@@ -14,12 +14,13 @@ var locationReducer = function(state, action) {
 	if (action.type === actions.SAVE_LOCATION) {
 		return {
 			searchText: action.searchText,
-			places: action.locations
+			categories: action.categories
 		}
 	}
-	else if (action.type === actions.GET_LOCATIONS) {
+	else if (action.type === actions.GET_CATEGORIES) {
+		console.log(action.categories);
 		return {
-			places: action.locations, 
+			categories: action.categories,
 			searchText: state.searchText
 		}
 	} 
@@ -29,7 +30,7 @@ var locationReducer = function(state, action) {
 			address: action.data.location.address,
 			locationId: action.data.id,
 			verified: action.data.verified,
-			places: state.places,
+			categories: state.categories,
 			searchText: state.searchText,
 			lat: action.data.location.lat,
 			lng: action.data.location.lng
@@ -38,6 +39,7 @@ var locationReducer = function(state, action) {
 		else if (action.type === actions.CACHE_LOCATION) {
 		return {
 			name: state.name,
+			categories: state.categories,
 			address: state.address,
 			locationId: state.locationId,
 			verified: state.verified,
@@ -52,7 +54,7 @@ var locationReducer = function(state, action) {
 			name: action.name,
 			address: action.address,
 			rating: action.rating,
-			places: state.places,
+			categories: state.categories,
 			searchText: state.searchText
 		}
 	}

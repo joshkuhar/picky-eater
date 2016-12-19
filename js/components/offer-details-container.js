@@ -13,7 +13,7 @@ var Location = React.createClass({
 		console.log(this.props.params.locationDetailsId, this.props.cachedLocation);	
 		if( this.props.params.locationDetailsId != this.props.cachedLocation){
 			this.props.dispatch(actions.fetchLocations(this.props.params.locationDetailsId, this.props.searchText));
-		}
+		} 
 	},
 	render: function() {
 		var map = "https://maps.googleapis.com/maps/api/staticmap?center=";
@@ -42,7 +42,7 @@ var mapStateToProps = function(state, props) {
 		address: state.address,
 		locationId: state.locationId,
 		verified: state.verified,
-		places: state.places,
+		categories: state.categories,
 		searchText: state.searchText,
 		cachedLocation: state.cachedLocation,
 		lat: state.lat,

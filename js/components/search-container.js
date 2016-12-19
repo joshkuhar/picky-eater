@@ -14,11 +14,10 @@ var ReactDOM = require('react-dom');
 var SearchContainer = React.createClass({
 	onButtonClick: function() {
 	    var searchWord = this.textInput.value;
-		
-		var randomPlaces = Object.keys(Categories).map(function(place, index){
+		var randomCategories = Object.keys(Categories).map(function(place, index){
 			return Categories[place][Math.floor((Math.random() * Categories[place].length-1) + 1)]
 		});
-		this.props.dispatch(actions.saveLocation(searchWord, randomPlaces));
+		this.props.dispatch(actions.saveLocation(searchWord, randomCategories));
 	},
 	render: function() {
 		return (
