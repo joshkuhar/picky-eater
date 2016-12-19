@@ -10,9 +10,7 @@ var Button = require('./button');
 
 var Offer = function(props){
 	var secondOffer = props.secondOffer;
-	console.log(props.locationId);
 	for (var index in secondOffer){
-		console.log('dfdfs',secondOffer[index].id, props.locationId);
 		if(secondOffer[index].id == props.locationId){
 			secondOffer.splice(index, 1);
 		}
@@ -22,20 +20,19 @@ var Offer = function(props){
 	//console.log(props.locationId, secondOffer[0].id);
 	
 	return(
-		<div>
-			<Location name={props.shortName} />
-			<Link to={"/locations/" + props.locationId +"/"+ props.locationId}><Button name="I'll Take It"/></Link>
-		
-			<div>Below is what was selected for you. If you want to get a different restaurant, 
-			choose from one of the hidden ones below. However, 
-			you might not like what you get! Once you choose, your selection is final!</div>
-			<div>First Offer</div>
-			<div>The name of this restaraunt is {props.name}. That's all your'e getting told.</div>
-
-			
-			<h4>Second Offer</h4>
-			<div>Hidden</div>
-			<Link to={"/locations/play/" + props.locationId +"/"+ secondOffer[secondOfferId].id}><Button name="I'll Take It"/></Link>
+		<div className="offers">
+			<div className="offer-instructions">Below is what was selected for you. If you want to try a completely random restaurant, 
+			choose the second offer. </div>
+			<div className="offer-header">First Offer</div>
+			<div className="first-offer">{props.name}</div>
+			<div className="offer-button">
+				<Link to={"/locations/play/" + props.locationId +"/"+ props.locationId}><Button name="I'll Take It" onClick={props.onClick}/></Link>
+			</div>
+			<div className="offer-header">Second Offer</div>
+			<div className="second-offer">HIDDEN</div>
+			<div className="offer-button">
+				<Link to={"/locations/play/" + props.locationId +"/"+ secondOffer[secondOfferId].id}><Button name="I'll Take It"/></Link>
+			</div>
 		</div>
 		)
 };

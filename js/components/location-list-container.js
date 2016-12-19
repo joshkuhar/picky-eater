@@ -4,7 +4,6 @@ var connect = require('react-redux').connect;
 var actions = require('../actions/index');
 var Button = require('./button');
 var Locations = require('./location-list');
-var Timer = require('./timer');
 var Categories = require('../actions/categories');
 
 var LocationList = React.createClass({
@@ -13,25 +12,18 @@ var LocationList = React.createClass({
 			return Categories[place][Math.floor((Math.random() * Categories[place].length-1) + 1)]
 			});
 		this.props.dispatch(actions.getLocations(randomPlaces));
-		{/*
-		var self = this;
-		var startTimer = setInterval(function(){ 
-			self.props.dispatch(actions.countDown());
-			if (self.props.time < 1){
-					clearInterval(startTimer);
-				};
-			}, 1000);
-		*/}
 	},
 	render: function() {
 
 		return(
-
-				<div>
-					<Button name="Shuffle" onClick={this.onClick} />
-					<Locations locations={this.props.locations}  />
+				<div className='location-list'>
+					<div>
+						<div className='shuffle-button'>
+							<Button name="Shuffle" onClick={this.onClick} />
+						</div>	
+						<Locations locations={this.props.locations}  />
+					</div>
 				</div>
-
 			)
 	}
 });
@@ -49,7 +41,3 @@ var Container = connect(mapStateToProps)(LocationList);
 
 module.exports = Container;
 	
-{/*
-	this.props.dispatch(actions.countDown()) 
-
-*/}

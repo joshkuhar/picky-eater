@@ -13,18 +13,21 @@ var Locations = function(props) {
 		var singleLocation = props.locations[index];
 		var shortName = singleLocation.shortName;
 		var locationId = singleLocation.id;	
-		console.log(singleLocation, locationId, shortName)
 		places.push(
-			<div key={index}>
-				<Location locationId={locationId} name={shortName} />
-				<Link to={"/locations/play/" + locationId} ><Button name="Select" /></Link>
+			<div className="location-option" key={index}>
+				
+					<Location locationId={locationId} name={shortName} />
+					<Link to={"/locations/play/" + locationId} ><Button className="category-button" name="Select" /></Link>
+			
 			</div>
 			)
 	}
 	return (
-		<div>
+		
+			<div >
 			{places}
-		</div>
+			</div>
+		
 	)
 };
 

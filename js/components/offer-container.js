@@ -10,19 +10,18 @@ var Button = require('./button');
 var Offer = require('./offer');
 
 var LocationType = React.createClass({
-	componentWillMount: function(){
-		console.log("I am the params dsdsds ",  this.props.params.locationId)
+	componentDidMount: function(){
 		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
+	},
+	onClick: function (){
+		this.props.dispatch(actions.cacheLocation(this.props.params.locationId));
 	},
 	render: function(){
 		return (
-			<Offer secondOffer={this.props.places} locationId={this.props.params.locationId}
-				shortName={this.props.name} name={this.props.name}
-			/>		
+			<Offer secondOffer={this.props.places} locationId={this.props.params.locationId} name={this.props.name} onClick={this.onClick}/>
 				)
 	}
 });
-
 
 var mapStateToProps = function(state, props) {
     return {

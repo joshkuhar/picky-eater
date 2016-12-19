@@ -22,13 +22,16 @@ var SearchContainer = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
-				<input type="text" ref={function(element) {
-                	this.textInput = element;
-            	}.bind(this)} />
-           	 	<Link to={"/locations/play"} ><button type="button" onClick={this.onButtonClick}>
-                	Click me!
-            	</button></Link>
+			<div className="search-container">
+				<div className="short-instructions">Enter the area you want to search and then click "I'm Hungry"</div>
+				<div className="search-box">
+					<input type="text" placeholder="Search Near" ref={function(element) {
+	                	this.textInput = element;
+	            	}.bind(this)} />
+	           	 	<Link to={"/locations/play"} ><button type="button" onClick={this.onButtonClick}>
+	                	I'm Hungry
+	            	</button></Link>
+				</div>
 			</div>
 		)
 	}
