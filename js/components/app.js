@@ -8,7 +8,6 @@ var App = React.createClass({
 	render: function(){
 	return(
 		<div>
-			<Button name="Store" onClick={this.onClick} />
 			<div>
 				<h2 className="headline">Restaraunt Picker</h2>
 				<div className="nav-bar">
