@@ -1,0 +1,125 @@
+
+body {
+	background-color: #AFF553;
+}
+
+h2 {
+	background-color: #F5535E;
+	color: white;
+	text-align: center;
+	border-bottom: .3em solid #535EF5;
+	width: 9em;
+	margin: auto;
+	border-radius: 5px;
+}
+.nav-bar{
+	border: .1em solid white;
+	width: 62%;
+	margin: auto;
+}
+.short-instructions {
+	color: #535EF5;
+	text-align: center;
+	font-size: .9em;
+	margin-top: 2em;
+}
+.nav-bar-item {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	background-color: #F5535E;
+	color: white;
+}
+.game-container {
+	width: 75%;
+	margin: auto;
+}
+.instructions, .offer-instructions {
+	width: 20em;
+	color: #535EF5;
+	margin: 2em auto;
+}
+input {
+	font-size: 1em;
+}
+.search-box {
+	width: 20em;
+	margin: .5em auto;
+}
+
+button {
+	background-color: #535EF5;
+	color: white;
+	border-radius: 5px;
+}
+.location-name {
+	background-color: #F5535E;
+	color: white;
+	text-align: center;
+	width: 9em;
+	margin: auto;
+	border-radius: 5px;
+	font-size: 1.2em;
+	border: .02em solid #535EF5;
+}
+.location-option {
+	display: inline;
+}
+.location-list {
+	width: 60%;
+	margin: auto;
+	text-align: center;
+}
+.shuffle-button {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.shuffle-button > button {
+	font-size: 1.5em;
+}
+.offers {
+	width: 75%;
+	margin: auto;
+}
+.offer-header {
+	margin-top: 2em;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.first-offer {
+	color: #535EF5;
+	font-size: 1.2em;
+}
+.second-offer {	
+	background-color: #F5535E;
+	color: white;
+	text-align: center;
+	width: 5em;
+	font-size: 1.2em;
+
+}
+.offer-button {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+.offer-container {
+	width: 60%;
+}
+h3 {
+	background-color: #F5535E;
+	color: white;
+	text-align: center;
+	border-bottom: .3em solid #535EF5;
+	width: 9em;
+	margin: 2em auto;
+	border-radius: 5px;
+}
+.offer-header {
+	font-size: 1.2;
+	color: #535EF5;
+}
+.offer-name, .offer-address {
+	font-size: 1.2;
+	color: #535EF5;
+}
+
