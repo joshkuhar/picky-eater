@@ -10,43 +10,44 @@ var initialState = {
 
 var locationReducer = function(state, action) {
 	state = state || initialState;
+	//This action saves the local area the user is searching
 	if (action.type === actions.SAVE_LOCATION) {
-		console.log('save location');
 		return {
 			searchText: action.searchText,
 			places: action.locations
 		}
 	}
 	else if (action.type === actions.GET_LOCATIONS) {
-		console.log("get_locations");
-		if(state.time % 4 == 0){
-			var categoriesCount = state.categoriesCount - 1
-		} else {
-			var categoriesCount = state.categoriesCount
-		}
 		return {
 			places: action.locations, 
-			time: state.time, 
-			categoriesCount: categoriesCount,
 			searchText: state.searchText
 		}
 	} 
-	else if (action.type === actions.GET_OFFER) {
-		return {address: action.location + " I am the placeholder address, woooo"}
-	} 
 	else if (action.type === actions.FETCH_SUCCESS) {
-		console.log(action);
 		return {
 			name: action.data.name,
 			address: action.data.location.address,
-			locationId: action.id,
-			verified: action.verified,
+			locationId: action.data.id,
+			verified: action.data.verified,
 			places: state.places,
-			searchText: state.searchText
+			searchText: state.searchText,
+			lat: action.data.location.lat,
+			lng: action.data.location.lng
+		}
+	}
+		else if (action.type === actions.CACHE_LOCATION) {
+		return {
+			name: state.name,
+			address: state.address,
+			locationId: state.locationId,
+			verified: state.verified,
+			searchText: state.searchText,
+			lat: state.lat,
+			lng: state.lng,
+			cachedLocation: action.location
 		}
 	}
 	else if (action.type === actions.FETCH_LOCATION_SUCCESS) {
-		console.log("I am ", action);
 		return {
 			name: action.name,
 			address: action.address,
@@ -55,13 +56,9 @@ var locationReducer = function(state, action) {
 			searchText: state.searchText
 		}
 	}
-	else if(action.type === actions.COUNTDOWN) {
-		var time = state.time - 1;
+	else if (action.type === actions.FETCH_MAP_SUCCESS) {
 		return {
-			time: time,
-			places: state.places,
-			categoriesCount: state.categoriesCount,
-			searchText: state.searchText
+			map: action.map
 		}
 	}
 	return state;
