@@ -6,11 +6,6 @@ var Categories = {
 		shortName: "Asian"
 	},
 	{
-		place: "Eastern European Restaurant",
-		id: "4bf58dd8d48988d109941735",
-		shortName: "Eastern European"
-	},
-	{
 		place: "French Restaurant",
 		id: "4bf58dd8d48988d10c941735",
 		shortName: "French"
@@ -78,23 +73,16 @@ var Categories = {
 		id: "52e81612bcbc57f1066b79f4",
 		shortName: "Buffet"
 	},
-
 	{
 		place: "Diner",
 		id: "4bf58dd8d48988d147941735",
 		shortName: "Diner"
 	},
 	{
-		place: "Dumpling Restaurant",
-		id: "4bf58dd8d48988d108941735",
-		shortName: "Dumplings"
-	},
-	{
 		place: "Falafel Restaurant",
 		id: "4bf58dd8d48988d10b941735",
 		shortName: "Falafel"
 	},
-
 	{
 		place: "Kebab Restaurant",
 		id: "5283c7b4e4b094cb91ec88d7",
@@ -110,7 +98,6 @@ var Categories = {
 		id: "4bf58dd8d48988d1c5941735",
 		shortName: "Sandwiches"
 	},
-
 	{
 		place: "Seafood Restaurant",
 		id: "4bf58dd8d48988d1ce941735",
@@ -169,11 +156,6 @@ fastFood: [
 			place: "Pizza Place",
 			id: "4bf58dd8d48988d1ca941735",
 			shortName: "Pizza"
-		},
-		{
-			place: "Truck Stop",
-			id: "57558b36e4b065ecebd306dd",
-			shortName: "Truck Stop"
 		},
 		{
 			place: "Fish & Chips Shop",

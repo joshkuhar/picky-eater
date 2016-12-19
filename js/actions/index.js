@@ -2,15 +2,12 @@ require('isomorphic-fetch');
 
 var SAVE_LOCATION = 'SAVE_LOCATION';
 var saveLocation = function(searchText, locations){
-    console.log(searchText, 'dfsdfsfd');
     return {
         type: SAVE_LOCATION,
         searchText: searchText,
         locations: locations
-
     }
 };
-
 exports.SAVE_LOCATION = SAVE_LOCATION;
 exports.saveLocation = saveLocation;
 
@@ -21,19 +18,26 @@ var getOffer = function(location){
 		location: location
 		};
 };
-
 exports.GET_OFFER = GET_OFFER;
 exports.getOffer = getOffer;
 
+var CACHE_LOCATION = 'CACHE_LOCATION';
+var cacheLocation = function(location) {
+    return {
+        type: CACHE_LOCATION,
+        location: location
+    }
+}
+exports.CACHE_LOCATION = CACHE_LOCATION;
+exports.cacheLocation = cacheLocation;
+
 var GET_LOCATIONS = 'GET_LOCATIONS';
 var getLocations = function(locations) {
-    console.log("get_locations");
 	return {
 		type: GET_LOCATIONS,
 		locations: locations
 	}
 };
-
 exports.GET_LOCATIONS = GET_LOCATIONS;
 exports.getLocations = getLocations;
 
@@ -44,13 +48,12 @@ var fetchSuccess = function(data) {
 		data: data
 	}
 };
-
 exports.FETCH_SUCCESS = FETCH_SUCCESS;
 exports.fetchSuccess = fetchSuccess;
 
+
 var FETCH_LOCATION_SUCCESS = 'FETCH_LOCATION_SUCCESS';
 var fetchLocationSuccess = function(data){
-    console.log('locationSucess ', data);
     return {
         type: FETCH_LOCATION_SUCCESS,
         address: data.location.address,
@@ -58,19 +61,18 @@ var fetchLocationSuccess = function(data){
         rating: data.rating
     }
 };
-
 exports.FETCH_LOCATION_SUCCESS = FETCH_LOCATION_SUCCESS;
 exports.fetchLocationSuccess = fetchLocationSuccess;
 
-var COUNTDOWN = 'COUNTDOWN';
-var countDown = function(){
-        return { type: COUNTDOWN }   
-    };
-
-
-
-exports.COUNTDOWN = COUNTDOWN;
-exports.countDown = countDown;
+var FETCH_MAP_SUCCESS = 'FETCH_MAP_SUCCESS';
+var fetchMapSuccess = function(map){
+    return {
+        type: FETCH_MAP_SUCCESS,
+        map: map
+    }
+}
+exports.FETCH_LOCATION_SUCCESS = FETCH_LOCATION_SUCCESS;
+exports.fetchMapSuccess = fetchMapSuccess;
 
 var fetchLocations = function(id, searchText) {
     var p = {
@@ -113,6 +115,37 @@ var fetchLocations = function(id, searchText) {
 };
 
 exports.fetchLocations = fetchLocations;
+
+
+var fetchMap = function(map) {
+    console.log("I was called", map);
+    return function(dispatch) {
+        return fetch(map).then(function(response) {
+            if (response.status < 200 || response.status >= 300) {
+                var error = new Error(response.statusText)
+                error.response = response
+                throw error;
+            }
+            return response;
+        })
+        // .then(function(response) {
+        //     console.log(response);
+        //     return response.json();
+        // })
+        .then(function(data) {
+            console.log(data);
+            return dispatch(
+                fetchMapSuccess(data)
+            );
+        })
+        .catch(function(error) {
+           console.log(error);
+        });
+    }
+};
+
+exports.fetchMap = fetchMap;
+
 
 var fetchSingleLocation = function(id) {
     var p = {
