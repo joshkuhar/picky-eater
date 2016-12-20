@@ -8,18 +8,15 @@ var Categories = require('../actions/categories');
 var Button = require('./button');
 
 var Offer = function(props){
-	console.log({props})
-	var secondOffer = props.secondOffer;
-	for (var index in secondOffer){
-		if(secondOffer[index].id == props.locationId){
-			secondOffer.splice(index, 1);
-		}
+	console.log(props);
+	// var secondOffer = props.secondOffer;
+	// for (var index in secondOffer){
+	// 	if(secondOffer[index].id == props.locationId){
+	// 		secondOffer.splice(index, 1);
+	// 	}
 
-	}
-	console.log("second offer", {secondOffer})
-	var secondOfferId = Math.floor((Math.random() * secondOffer.length-1) + 1);	
-	console.log(secondOffer, secondOfferId);
-	//console.log(props.locationId, secondOffer[0].id);
+	// }
+	// var secondOfferId = Math.floor((Math.random() * secondOffer.length-1) + 1);	
 	
 	return(
 		<div className="offers">
@@ -33,7 +30,7 @@ var Offer = function(props){
 			<div className="offer-header">Second Offer</div>
 			<div className="second-offer">HIDDEN</div>
 			<div className="offer-button">
-				<Link to={"/locations/play/" + props.locationId +"/"+ secondOffer[secondOfferId].id}><Button name="I'll Take It"/></Link>
+				<Link to={"/locations/play/" + props.locationId +"/"+ props.secondOfferId}><Button name="I'll Take It"/></Link>
 			</div>
 		</div>
 		)

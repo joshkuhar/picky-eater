@@ -31,28 +31,26 @@ var getOffer = function(location){
 exports.GET_OFFER = GET_OFFER;
 exports.getOffer = getOffer;
 
-var CACHE_LOCATION = 'CACHE_LOCATION';
-var cacheLocation = function(location) {
-    return {
-        type: CACHE_LOCATION,
-        location: location
-    }
-}
-exports.CACHE_LOCATION = CACHE_LOCATION;
-exports.cacheLocation = cacheLocation;
-
-
-
 var FETCH_SUCCESS = 'FETCH_SUCCESS';
-var fetchSuccess = function(data) {
+var fetchSuccess = function(id, data, secondOfferId) {
 	return {
 		type: FETCH_SUCCESS,
-		data: data
+        id: id,
+		data: data,
+        secondOfferId: secondOfferId
 	}
 };
 exports.FETCH_SUCCESS = FETCH_SUCCESS;
 exports.fetchSuccess = fetchSuccess;
 
+var FETCH_CACHED_LOCATIONS = 'FETCH_CACHED_LOCATIONS';
+var fetchCachedLocations = function(){
+    return {
+        type: FETCH_CACHED_LOCATIONS
+    }
+}
+exports.FETCH_CACHED_LOCATIONS = FETCH_CACHED_LOCATIONS;
+exports.fetchCachedLocations = fetchCachedLocations;
 
 var FETCH_LOCATION_SUCCESS = 'FETCH_LOCATION_SUCCESS';
 var fetchLocationSuccess = function(data){
@@ -76,7 +74,7 @@ var fetchMapSuccess = function(map){
 exports.FETCH_LOCATION_SUCCESS = FETCH_LOCATION_SUCCESS;
 exports.fetchMapSuccess = fetchMapSuccess;
 
-var fetchLocations = function(id, searchText) {
+var fetchLocations = function(id, searchText, secondOfferId) {
     var p = {
         url: "https://api.foursquare.com/v2/venues/search?",
         clId: "client_id=LT5PEZMUYPGXVYMZX0BDR1O2001DFRSKWV2DWI3AFFEPDWJZ",
@@ -105,9 +103,8 @@ var fetchLocations = function(id, searchText) {
         .then(function(data) {
             var location = data.response.venues;
             var randomLocation = location[Math.floor((Math.random() * location.length-1) + 1)];
-            console.log(randomLocation);
             return dispatch(
-                fetchSuccess(randomLocation)
+                fetchSuccess(id, randomLocation, secondOfferId)
             );
         })
         .catch(function(error) {

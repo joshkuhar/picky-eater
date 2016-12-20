@@ -52,7 +52,7 @@ button {
 	color: white;
 	border-radius: 5px;
 }
-.location-name {
+.category-name {
 	background-color: #F5535E;
 	color: white;
 	text-align: center;
@@ -62,10 +62,10 @@ button {
 	font-size: 1.2em;
 	border: .02em solid #535EF5;
 }
-.location-option {
+.category-option {
 	display: inline;
 }
-.location-list {
+.category-list {
 	width: 60%;
 	margin: auto;
 	text-align: center;

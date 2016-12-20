@@ -22,6 +22,7 @@ var Location = React.createClass({
 		var secondLL = this.props.lat + "," + this.props.lng;
 		var key = "&key=AIzaSyCJoYNYymUXQ4O0QIA4By_MJpRWVEc98B4";
 		var locationMap = map + ll + mapParams + secondLL + key;
+		
 		return (
 		<div>
 			<div className="offer-container">

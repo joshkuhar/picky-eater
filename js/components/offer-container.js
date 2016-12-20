@@ -10,16 +10,29 @@ var Offer = require('./offer');
 
 var LocationType = React.createClass({
 	componentDidMount: function(){
-		console.log("I'm two");
-		console.log({props: this.props.params});
-		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
+		if (!this.props.cachedLocation) {
+			var secondOffer = this.props.categories;
+			console.log(secondOffer);
+			for (var index in secondOffer){
+				if(secondOffer[index].id == this.props.params.locationId){
+					secondOffer.splice(index, 1);
+				}
+			}
+			var secondOfferId = Math.floor((Math.random() * secondOffer.length-1) + 1);	
+			this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText, secondOffer[secondOfferId].id))
+		}
+		if (this.props.firstLocation) {
+			this.props.dispatch(actions.fetchCachedLocations());
+		}
+
+
 	},
 	onClick: function (){
-		this.props.dispatch(actions.cacheLocation(this.props.params.locationId));
+		//this.props.dispatch(actions.cacheLocation(this.props.params.locationId));
 	},
 	render: function(){
 		return (
-			<Offer secondOffer={this.props.categories} locationId={this.props.params.locationId} name={this.props.name} onClick={this.onClick}/>
+			<Offer secondOfferId={this.props.secondOfferId} locationId={this.props.params.locationId} name={this.props.name} onClick={this.onClick}/>
 				)
 	}
 });
@@ -30,7 +43,10 @@ var mapStateToProps = function(state, props) {
         address: state.address,
         locationId: state.locationId,
         categories: state.categories,
-        searchText: state.searchText
+        searchText: state.searchText,
+        cachedLocation: state.cachedLocation,
+        secondOfferId: state.secondOfferId,
+        firstLocation: state.firstLocation
 
     };
 };

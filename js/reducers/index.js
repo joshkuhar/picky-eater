@@ -6,6 +6,7 @@ var initialState = {
 	categories: "",
 	data: Data,
 	searchText: ""
+
 };
 
 var locationReducer = function(state, action) {
@@ -18,36 +19,44 @@ var locationReducer = function(state, action) {
 		}
 	}
 	else if (action.type === actions.GET_CATEGORIES) {
-		console.log(action.categories);
 		return {
 			categories: action.categories,
 			searchText: state.searchText
 		}
 	} 
 	else if (action.type === actions.FETCH_SUCCESS) {
-		return {
-			name: action.data.name,
-			address: action.data.location.address,
-			locationId: action.data.id,
-			verified: action.data.verified,
-			categories: state.categories,
-			searchText: state.searchText,
-			lat: action.data.location.lat,
-			lng: action.data.location.lng
+		if(!state.cachedLocation) {
+			return {
+				name: action.data.name,
+				address: action.data.location.address,
+				locationId: action.data.id,
+				verified: action.data.verified,
+				categories: state.categories,
+				searchText: state.searchText,
+				lat: action.data.location.lat,
+				lng: action.data.location.lng,
+				cachedLocation: action.id,
+				secondOfferId: action.secondOfferId,
+				data: action.data
+			}
+		}  else {
+			return {
+				firstLocation: state,
+				name: action.data.name,
+				address: action.data.location.address,
+				locationId: action.data.id,
+				verified: action.data.verified,
+				categories: state.categories,
+				searchText: state.searchText,
+				lat: action.data.location.lat,
+				lng: action.data.location.lng,
+				cachedLocation: action.id,
+				data: action.data
+			}
 		}
 	}
-		else if (action.type === actions.CACHE_LOCATION) {
-		return {
-			name: state.name,
-			categories: state.categories,
-			address: state.address,
-			locationId: state.locationId,
-			verified: state.verified,
-			searchText: state.searchText,
-			lat: state.lat,
-			lng: state.lng,
-			cachedLocation: action.location
-		}
+	else if (action.type === actions.FETCH_CACHED_LOCATIONS) {
+		return state.firstLocation
 	}
 	else if (action.type === actions.FETCH_LOCATION_SUCCESS) {
 		return {
@@ -56,11 +65,6 @@ var locationReducer = function(state, action) {
 			rating: action.rating,
 			categories: state.categories,
 			searchText: state.searchText
-		}
-	}
-	else if (action.type === actions.FETCH_MAP_SUCCESS) {
-		return {
-			map: action.map
 		}
 	}
 	return state;
