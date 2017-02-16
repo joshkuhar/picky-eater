@@ -1,6 +1,6 @@
 
 body {
-	background-color: #AFF553;
+	background-color: white;
 }
 
 h2 {
@@ -33,6 +33,17 @@ h2 {
 .game-container {
 	width: 75%;
 	margin: auto;
+}
+.main-photo{
+    background-image: url(../assets/food-plate.jpg);
+    /* margin: auto; */
+    display: block;
+    margin: 0em 0em 0em 0em;
+    height: 70em;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .instructions, .offer-instructions {
 	width: 20em;

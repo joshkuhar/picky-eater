@@ -5,14 +5,10 @@ var router = require('react-router');
 var Link = router.Link;
 
 var App = React.createClass({
-	onClick: function(){
-		console.log(store.getState());
-	},
 	render: function(){
 	return(
 		<div>
-			<button onClick={this.onClick}>store</button>
-			<div>
+			<div className="main-photo">
 				<h2 className="headline">Restaraunt Picker</h2>
 				<div className="nav-bar">
 					<Link to={"/locations/instructions"} ><div className="nav-bar-item">Instructions</div></Link>
@@ -20,7 +16,7 @@ var App = React.createClass({
 				</div>
 			</div>
 			<div>
-				<div className="game-container">
+				<div>
 					{this.props.children}
 				</div>
 			</div>
