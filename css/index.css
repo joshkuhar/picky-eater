@@ -22,10 +22,12 @@ h2 {
 	margin-top: 2em;
 }
 .nav-bar-item {
-	display: inline-block;
-	width: 50%;
-	text-align: center;
-	color: black;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    color: black;
+    position: relative;
+    z-index: 1;
 }
 .game-container {
 	width: 75%;
