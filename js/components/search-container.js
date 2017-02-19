@@ -27,8 +27,8 @@ var SearchContainer = React.createClass({
 					<input type="text" placeholder="Search Near" ref={function(element) {
 	                	this.textInput = element;
 	            	}.bind(this)} />
-	           	 	<Link to={"/locations/play"} ><button type="button" onClick={this.onButtonClick}>
-	                	I'm Hungry
+	           	 	<Link to={"/locations/play"} ><button type="button" className="search-locations" onClick={this.onButtonClick}>
+	                	Search
 	            	</button></Link>
 				</div>
 			</div>

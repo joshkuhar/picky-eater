@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
-/* font-family: 'Pacifico', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 
+/* font-family: 'Pacifico', cursive; */
+/* font-family: 'Roboto', sans-serif */
 body {
 	background-color: white;
 	margin: 0em 0em 0em 0em;
@@ -21,12 +23,7 @@ body {
     margin: 3em auto;
     text-align: center;
 }
-.short-instructions {
-	color: #535EF5;
-	text-align: center;
-	font-size: .9em;
-	margin-top: 2em;
-}
+
 .nav-bar-item {
     display: inline-block;
     width: 10em;
@@ -45,8 +42,16 @@ body {
 	background-color: #E91E63;
 }
 .game-container {
-	width: 75%;
-	margin: auto;
+    background-color: #9C0E2B;
+    min-height: 40em;
+    color: white;
+    padding-top: 5em;
+}
+.short-instructions {
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	margin-bottom: 2em;
+	color: lightgray;
 }
 .main-photo{
     background-image: url(../assets/food-plate.jpg);
@@ -71,20 +76,37 @@ body {
 .instructions, .offer-instructions {
 	width: 20em;
 	color: #535EF5;
-	margin: 2em auto;
-}
-input {
-	font-size: 1em;
 }
 .search-box {
-	width: 20em;
-	margin: .5em auto;
+	text-align: center;
 }
-
-button {
-	background-color: #535EF5;
+input {
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    padding: .2em;
+}
+.search-locations{
+	background-color: inherit;
 	color: white;
 	border-radius: 5px;
+	border: .01em solid white;
+	text-decoration: none;
+	font-size: 1.4em;
+	padding: .2em;
+	font-weight: 100;
+	letter-spacing: .09em;
+	margin-left: .25em;
+	width: 7em;
+}
+.search-locations:hover {
+	background-color: #DC143C;
+	cursor: pointer;
+}
+
+
+button {
+
 }
 .category-name {
 	background-color: #F5535E;

@@ -15,11 +15,9 @@ var App = React.createClass({
 					<Link to={"/locations"} ><div className="nav-bar-item">Home</div></Link>
 				</div>
 			</div>
-			<div>
-				<div>
-					{this.props.children}
-				</div>
-			</div>
+			  <div className="game-container">
+				{this.props.children}
+			  </div>
 		</div>
 
 		)
