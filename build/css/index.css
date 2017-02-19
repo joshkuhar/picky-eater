@@ -126,10 +126,6 @@ button {
 	margin: auto;
 	text-align: center;
 }
-.shuffle-button {
-	margin-top: 2em;
-	margin-bottom: 2em;
-}
 .shuffle-button > button {
 	font-size: 1.5em;
 }

@@ -11,12 +11,15 @@ var initialState = {
 
 var locationReducer = function(state, action) {
 	state = state || initialState;
-	//This action saves the local area the user is searching
 	if (action.type === actions.SAVE_LOCATION) {
-		return {
-			searchText: action.searchText,
-			categories: action.categories
-		}
+		return Object.assign({}, state, {
+			searchText: action.searchText
+		})
+	}
+	else if (action.type === actions.CHANGE_SEARCH) {
+		return Object.assign({}, state, {
+			searchText: action.text
+		})
 	}
 	else if (action.type === actions.GET_CATEGORIES) {
 		return {

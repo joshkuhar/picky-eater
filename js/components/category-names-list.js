@@ -15,17 +15,15 @@ var CategoryNames = function(props) {
 		var categoryId = singleCategory.id;	
 		categories.push(
 			<div className="category-option" key={index}>
-				
 					<Category categoryId={categoryId} name={shortName} />
-					<Link to={"/locations/play/" + categoryId} ><Button className="category-button" name="Select" onClick={props.onClick}/></Link>
-			
+					<Link to={"/locations/play/" + categoryId} ><Button className="category-button" name="Select" onClick={props.onClick}/></Link>	
 			</div>
 			)
 	}
 	return (
 		
 			<div >
-			{categories}
+			 {categories}
 			</div>
 		
 	)

@@ -1,11 +1,20 @@
 require('isomorphic-fetch');
 
+var CHANGE_SEARCH = 'CHANGE_SEARCH';
+var changeSearch = function(text) {
+    return {
+        type: CHANGE_SEARCH,
+        text: text
+    }
+}
+exports.CHANGE_SEARCH = CHANGE_SEARCH;
+exports.changeSearch = changeSearch;
+
 var SAVE_LOCATION = 'SAVE_LOCATION';
-var saveLocation = function(searchText, categories){
+var saveLocation = function(searchText){
     return {
         type: SAVE_LOCATION,
-        searchText: searchText,
-        categories: categories
+        searchText: searchText
     }
 };
 exports.SAVE_LOCATION = SAVE_LOCATION;
