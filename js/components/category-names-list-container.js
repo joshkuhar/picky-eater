@@ -6,21 +6,20 @@ var Button = require('./button');
 var CategoryNames = require('./category-names-list');
 var Categories = require('../actions/categories');
 
+var randomCategories = function(){
+ var cats = Object.keys(Categories).map(function(category, index){
+	return Categories[category][Math.floor((Math.random() * Categories[category].length-1) + 1)]
+	})
+ return cats;
+};
+
 var CategoryList = React.createClass({
 	componentDidMount: function() {
-		var randomCategories = Object.keys(Categories).map(function(category, index){
-			return Categories[category][Math.floor((Math.random() * Categories[category].length-1) + 1)]
-			});
-		this.props.dispatch(actions.getCategories(randomCategories));
+		this.props.dispatch(actions.getCategories(randomCategories()));
 	},
-	onClick: function() {
-		var randomCategories = Object.keys(Categories).map(function(category, index){
-			return Categories[category][Math.floor((Math.random() * Categories[category].length-1) + 1)]
-			});
-		this.props.dispatch(actions.getCategories(randomCategories));
-	},
-	onDidSelect: function (){
-		console.log("I'm one");
+	onClick: function(event) {
+		event.preventDefault();
+		this.props.dispatch(actions.getCategories(randomCategories()));
 	},
 	render: function() {
 		return(
