@@ -23,9 +23,9 @@ var CategoryList = React.createClass({
 	},
 	render: function() {
 		return(
-				<div className='category-list'>
-				  <Button name="Shuffle" onClick={this.onClick} />
-				  <CategoryNames categoryList={this.props.categories} onClick={this.onDidSelect} />
+				<div className='categories-container'>
+				  <button className="shuffle-button" onClick={this.onClick}>shuffle</button>
+				  <CategoryNames categoryList={this.props.categories} />
 				</div>
 			)
 	}
