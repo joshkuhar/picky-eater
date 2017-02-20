@@ -22,9 +22,11 @@ exports.saveLocation = saveLocation;
 
 var GET_CATEGORIES = 'GET_CATEGORIES';
 var getCategories = function(categories) {
+    console.log(categories);
     return {
         type: GET_CATEGORIES,
-        categories: categories
+        categories: categories,
+        secondOfferId: categories[2].id
     }
 };
 exports.GET_CATEGORIES = GET_CATEGORIES;
@@ -39,6 +41,25 @@ var getOffer = function(location){
 };
 exports.GET_OFFER = GET_OFFER;
 exports.getOffer = getOffer;
+
+var CHOICE_MADE = 'CHOICE_MADE';
+var choiceMade = function() {
+    return {
+        type: 'CHOICE_MADE',
+        chose: "chose"
+    }
+}
+exports.CHOICE_MADE = CHOICE_MADE;
+exports.choiceMade = choiceMade;
+
+var RESET_LOCATIONS = 'RESET_LOCATIONS';
+var resetLocations = function() {
+    return {
+        type: RESET_LOCATIONS
+    }
+}
+exports.RESET_LOCATIONS = RESET_LOCATIONS;
+exports.resetLocations = resetLocations;
 
 var FETCH_SUCCESS = 'FETCH_SUCCESS';
 var fetchSuccess = function(id, data, secondOfferId) {

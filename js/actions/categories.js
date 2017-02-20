@@ -143,11 +143,6 @@ fastFood: [
 			shortName: "Burgers"
 		},
 		{
-			place: "Food Court",
-			id: "4bf58dd8d48988d120951735",
-			shortName: "Food Court"
-		},
-		{
 			place: "Hot Dog Joint",
 			id: "4bf58dd8d48988d16f941735",
 			shortName: "Hot Dogs"
