@@ -10,23 +10,24 @@ var Button = require('./button');
 var Offer = function(props){
 	return(
 		<div className="offers">
-			<div className="offer-instructions">Below is what was selected for you. If you want to try a completely random restaurant, 
-			choose the second offer. </div>
+			<div className="offer-instructions">Your Choices</div>
 			<div className="offer-box">
-			  <div className="offer-header">First Offer</div>
+			  <img src={props.image} alt="restaurant image" className="restaurant-image" />
+			  <div className="offer-header">Picked For You</div>
 			  <div className="first-offer">{props.name}</div>
 			  <div className="variety">{props.variety}</div>
 			  <div className="rating">Foursquare Rating {props.rating}</div>
 			  <div className="phone">{props.phone}</div>
-			  <div className="offer-link">
-				<Link to={"/locations/accepted/first"}>I'll Take It</Link>
+			  <div>
+				<Link to={"/locations/accepted/first"}><div className="offer-link">I'll Take It</div></Link>
 			  </div>
 			</div>
 			<div className="offer-box">
-			  <div className="offer-header">Second Offer</div>
 			  <div className="second-offer">HIDDEN</div>
-			  <div className="offer-link">
-				<Link to={"/locations/accepted/alternate"}>Show Me What You've Got</Link>
+			  <div className="offer-header">Get Picky</div>
+			  <div className="explain-hidden">If you select the hidden choice, the first choice will be removed and you won't be able to get it again.</div>
+			  <div>
+				<Link to={"/locations/accepted/alternate"}><div className="offer-link second-link">Show Me What You've Got</div></Link>
 			  </div>
 			</div>
 		</div>	

@@ -8,6 +8,7 @@ var initialState = {
     rating: "",
     phone: "",
     variety: "",
+    image: "",
     secondOfferId: "",
     chose: ""
 
@@ -37,7 +38,6 @@ var locationReducer = function(state, action) {
 		})
 	}
 	else if (action.type === actions.RESET_LOCATIONS) {
-		console.log(state);
 		return Object.assign({}, state, {
 			address: "",
 		    name: "",
@@ -49,7 +49,8 @@ var locationReducer = function(state, action) {
 		    searchText: "",
 		    chose: "",
 		    secondOfferId: "",
-		    categories: ""
+		    categories: "",
+		    image: ""
 		})
 	}
 	else if (action.type === actions.FETCH_SINGLE_LOCATION_SUCCESS) {
@@ -59,6 +60,7 @@ var locationReducer = function(state, action) {
 		    rating: action.rating,
 		    phone: action.phone,
 		    variety: action.variety,
+		    image: action.image,
 		    lat: action.lat,
 		    lng: action.lng
 		})

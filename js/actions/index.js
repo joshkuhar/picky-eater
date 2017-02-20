@@ -101,7 +101,7 @@ var fetchLocations = function(id, searchText, secondOfferId) {
         near: "&near=",
         categoryId: "&categoryId=",
         limit: "&limit=50",
-        radius: "&radius=3000",
+        radius: "&radius=5000",
         m: "&m=foursquare"
     };
     var play = p.url + p.clId + p.secret + p.v + p.near + searchText + p.categoryId + id + p.limit + p.radius + p.m;
@@ -143,7 +143,8 @@ var fetchSingleLocationSuccess = function(venue){
         phone: venue.contact.formattedPhone,
         variety: venue.categories[0].name,
         lat: venue.location.lat,
-        lng: venue.location.lng
+        lng: venue.location.lng,
+        image: venue.bestPhoto.prefix + "300x300" + venue.bestPhoto.suffix
 
     }
 };

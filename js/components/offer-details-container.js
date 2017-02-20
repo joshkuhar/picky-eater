@@ -26,12 +26,11 @@ var Location = React.createClass({
 		
 		return (
 		<div>
+		  <div className="final-offer">Here's the address!</div>
 			<div className="offer-container">
-				<h3>Offer</h3>
-				<div className="offer-header">Congratulations. You're eating here!</div>
-				<div className="offer-name">Name: {this.props.name}</div>
-				<div className="offer-address">Address: {this.props.address}</div>
-				<img src={locationMap} />
+			  <img src={locationMap} className="g-map"/>
+			  <div className="offer-name">{this.props.name}</div>
+			  <div className="offer-address">{this.props.address}</div>	
 			</div>
 		</div>
 		)

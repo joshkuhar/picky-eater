@@ -21,7 +21,7 @@ var LocationType = React.createClass({
 	render: function(){
 		return (
 			<div>
-			  <Offer name={this.props.name} onClick={this.onClick} name={this.props.name} address={this.props.address} rating={this.props.rating} phone={this.props.phone} variety={this.props.variety}/>
+			  <Offer name={this.props.name} onClick={this.onClick} name={this.props.name} address={this.props.address} rating={this.props.rating} phone={this.props.phone} variety={this.props.variety} image={this.props.image}/>
 			</div>
 				)
 	}
@@ -34,6 +34,7 @@ var mapStateToProps = function(state, props) {
         rating: state.rating,
         phone: state.phone,
         variety: state.variety,
+        image: state.image,
         locationId: state.locationId,
         categories: state.categories,
         searchText: state.searchText,
