@@ -61,18 +61,6 @@ var fetchCachedLocations = function(){
 exports.FETCH_CACHED_LOCATIONS = FETCH_CACHED_LOCATIONS;
 exports.fetchCachedLocations = fetchCachedLocations;
 
-var FETCH_LOCATION_SUCCESS = 'FETCH_LOCATION_SUCCESS';
-var fetchLocationSuccess = function(data){
-    return {
-        type: FETCH_LOCATION_SUCCESS,
-        address: data.location.address,
-        name: data.name,
-        rating: data.rating
-    }
-};
-exports.FETCH_LOCATION_SUCCESS = FETCH_LOCATION_SUCCESS;
-exports.fetchLocationSuccess = fetchLocationSuccess;
-
 var FETCH_MAP_SUCCESS = 'FETCH_MAP_SUCCESS';
 var fetchMapSuccess = function(map){
     return {
@@ -80,7 +68,7 @@ var fetchMapSuccess = function(map){
         map: map
     }
 }
-exports.FETCH_LOCATION_SUCCESS = FETCH_LOCATION_SUCCESS;
+exports.FETCH_MAP_SUCCESS = 'FETCH_MAP_SUCCESS';
 exports.fetchMapSuccess = fetchMapSuccess;
 
 var fetchLocations = function(id, searchText, secondOfferId) {
@@ -121,9 +109,23 @@ var fetchLocations = function(id, searchText, secondOfferId) {
         });
     }
 };
-
 exports.fetchLocations = fetchLocations;
 
+var FETCH_SINGLE_LOCATION_SUCCESS = 'FETCH_SINGLE_LOCATION_SUCCESS';
+var fetchSingleLocationSuccess = function(venue){
+    console.log(venue.location.address, venue.name, venue.rating, venue.contact.formattedPhone, venue.categories[0].name);
+    return {
+        type: FETCH_SINGLE_LOCATION_SUCCESS,
+        address: venue.location.address,
+        name: venue.name,
+        rating: venue.rating,
+        phone: venue.contact.formattedPhone,
+        variety: venue.categories[0].name
+
+    }
+};
+exports.FETCH_SINGLE_LOCATION_SUCCESS = FETCH_SINGLE_LOCATION_SUCCESS;
+exports.fetchSingleLocationSuccess = fetchSingleLocationSuccess;
 
 var fetchSingleLocation = function(id) {
     var p = {
@@ -148,9 +150,9 @@ var fetchSingleLocation = function(id) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data.response.venue);
+            var venue = data.response.venue;
             return dispatch(
-                fetchLocationSuccess(data.response.venue)
+                fetchSingleLocationSuccess(venue)
             );
         })
         .catch(function(error) {

@@ -155,6 +155,10 @@ button {
 	background-color: inherit;
 	border: .02em solid white;
 }
+.piceat {
+	height: 5em
+	width: 5em;
+}
 .offers {
 	width: 75%;
 	margin: auto;

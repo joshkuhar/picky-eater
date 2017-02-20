@@ -10,29 +10,38 @@ var Offer = require('./offer');
 
 var LocationType = React.createClass({
 	componentDidMount: function(){
-		if (!this.props.cachedLocation) {
-			var secondOffer = this.props.categories;
-			console.log(secondOffer);
-			for (var index in secondOffer){
-				if(secondOffer[index].id == this.props.params.locationId){
-					secondOffer.splice(index, 1);
-				}
-			}
-			var secondOfferId = Math.floor((Math.random() * secondOffer.length-1) + 1);	
-			this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText, secondOffer[secondOfferId].id))
-		}
-		if (this.props.firstLocation) {
-			this.props.dispatch(actions.fetchCachedLocations());
-		}
-
+		// if (!this.props.cachedLocation) {
+		// 	var secondOffer = this.props.categories;
+		// 	console.log(secondOffer);
+		// 	for (var index in secondOffer){
+		// 		if(secondOffer[index].id == this.props.params.locationId){
+		// 			secondOffer.splice(index, 1);
+		// 		}
+		// 	}
+		// 	var secondOfferId = Math.floor((Math.random() * secondOffer.length-1) + 1);	
+		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
+		// }
+		// if (this.props.firstLocation) {
+		// 	this.props.dispatch(actions.fetchCachedLocations());
+		// }
+	
 
 	},
-	onClick: function (){
+	onClick: function (event){
+		event.preventDefault();
+		console.log(this.props.name);
 		//this.props.dispatch(actions.cacheLocation(this.props.params.locationId));
+	},
+	storeget: function(event){
+		event.preventDefault();
+		console.log(store.getState())
 	},
 	render: function(){
 		return (
-			<Offer secondOfferId={this.props.secondOfferId} locationId={this.props.params.locationId} name={this.props.name} onClick={this.onClick}/>
+			<div>
+			<Offer name={this.props.name} onClick={this.onClick}/>
+			<button onClick={this.storeget}>store</button>
+			</div>
 				)
 	}
 });
@@ -47,7 +56,6 @@ var mapStateToProps = function(state, props) {
         cachedLocation: state.cachedLocation,
         secondOfferId: state.secondOfferId,
         firstLocation: state.firstLocation
-
     };
 };
 

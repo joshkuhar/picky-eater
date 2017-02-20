@@ -8,16 +8,6 @@ var Categories = require('../actions/categories');
 var Button = require('./button');
 
 var Offer = function(props){
-	console.log(props);
-	// var secondOffer = props.secondOffer;
-	// for (var index in secondOffer){
-	// 	if(secondOffer[index].id == props.locationId){
-	// 		secondOffer.splice(index, 1);
-	// 	}
-
-	// }
-	// var secondOfferId = Math.floor((Math.random() * secondOffer.length-1) + 1);	
-	
 	return(
 		<div className="offers">
 			<div className="offer-instructions">Below is what was selected for you. If you want to try a completely random restaurant, 

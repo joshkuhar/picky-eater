@@ -5,7 +5,12 @@ var initialState = {
 	restaurant: Data.locations.pizza,
 	categories: "",
 	data: Data,
-	searchText: ""
+	searchText: "",
+    address: "",
+    name: "",
+    rating: "",
+    phone: "",
+    variety: ""
 
 };
 
@@ -27,6 +32,15 @@ var locationReducer = function(state, action) {
 			searchText: state.searchText
 		}
 	} 
+	else if (action.type === actions.FETCH_SINGLE_LOCATION_SUCCESS) {
+		return Object.assign({}, state, {
+            address: action.address,
+		    name: action.name,
+		    rating: action.rating,
+		    phone: action.phone,
+		    variety: action.variety
+		})
+	}
 	else if (action.type === actions.FETCH_SUCCESS) {
 		if(!state.cachedLocation) {
 			return {
