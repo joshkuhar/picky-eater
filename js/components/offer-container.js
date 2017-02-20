@@ -32,15 +32,15 @@ var LocationType = React.createClass({
 		console.log(this.props.name);
 		//this.props.dispatch(actions.cacheLocation(this.props.params.locationId));
 	},
-	storeget: function(event){
-		event.preventDefault();
-		console.log(store.getState())
-	},
+	// storeget: function(event){
+	// 	event.preventDefault();
+	// 	console.log(store.getState())
+	// },
 	render: function(){
 		return (
 			<div>
-			<Offer name={this.props.name} onClick={this.onClick}/>
-			<button onClick={this.storeget}>store</button>
+			<Offer name={this.props.name} onClick={this.onClick} name={this.props.name} address={this.props.address} rating={this.props.rating} phone={this.props.phone} variety={this.props.variety}/>
+
 			</div>
 				)
 	}
@@ -50,6 +50,9 @@ var mapStateToProps = function(state, props) {
     return {
         name: state.name,
         address: state.address,
+        rating: state.rating,
+        phone: state.phone,
+        variety: state.variety,
         locationId: state.locationId,
         categories: state.categories,
         searchText: state.searchText,
@@ -63,6 +66,6 @@ var Container = connect(mapStateToProps)(LocationType);
 
 module.exports = Container;
 	{/*
-
+			<button onClick={this.storeget}>store</button>
 
 	*/}

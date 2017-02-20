@@ -120,7 +120,9 @@ var fetchSingleLocationSuccess = function(venue){
         name: venue.name,
         rating: venue.rating,
         phone: venue.contact.formattedPhone,
-        variety: venue.categories[0].name
+        variety: venue.categories[0].name,
+        lat: venue.location.lat,
+        lng: venue.location.lng
 
     }
 };
@@ -151,6 +153,7 @@ var fetchSingleLocation = function(id) {
         })
         .then(function(data) {
             var venue = data.response.venue;
+            console.log(venue);
             return dispatch(
                 fetchSingleLocationSuccess(venue)
             );

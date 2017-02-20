@@ -10,10 +10,12 @@ var Link = router.Link;
 var Location = React.createClass({
 	componentDidMount: function(){
 		{/*var map = "https://maps.googleapis.com/maps/api/staticmap?center=39.95217145907466,-75.15955209732056&zoom=13&size=400x300&maptype=roadmap&markers=color:red%7Csize:mid%7Clabel:FOO%7C39.952171,-75.159552&key=AIzaSyCJoYNYymUXQ4O0QIA4By_MJpRWVEc98B4"*/}
-		console.log(this.props.params.locationDetailsId, this.props.cachedLocation);	
-		if( this.props.params.locationDetailsId != this.props.cachedLocation){
-			this.props.dispatch(actions.fetchLocations(this.props.params.locationDetailsId, this.props.searchText));
+		if( this.props.params.choice == "first"){
+			console.log("nothing changed")
+			//this.props.dispatch(actions.fetchLocations(this.props.params.locationDetailsId, this.props.searchText));
 		} 
+		if( this.props.params.choice == "alternate")
+			console.log("gambled");
 	},
 	render: function() {
 		var map = "https://maps.googleapis.com/maps/api/staticmap?center=";
@@ -43,11 +45,13 @@ var mapStateToProps = function(state, props) {
 		address: state.address,
 		locationId: state.locationId,
 		verified: state.verified,
-		categories: state.categories,
-		searchText: state.searchText,
-		cachedLocation: state.cachedLocation,
 		lat: state.lat,
-		lng: state.lng
+		lng: state.lng,
+        rating: state.rating,
+        phone: state.phone,
+        variety: state.variety,
+        secondOfferId: state.secondOfferId,
+        firstLocation: state.firstLocation
     };
 };
 

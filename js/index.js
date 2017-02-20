@@ -28,7 +28,7 @@ var Routes = (
 				<Route path="instructions" component={Instructions} />
 				<Route path="play"component={CategoryList} />
 				<Route path="play/:locationId" component={Offer} />
-				<Route path="play/:locationId/:locationDetailsId" component={OfferDetails} />
+				<Route path="accepted/:choice" component={OfferDetails} />
 			</Route>
 	    </Router>
 	</Provider>

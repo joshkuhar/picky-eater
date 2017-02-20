@@ -73,9 +73,10 @@ body {
     top: 0;
     left: 0;
 }
-.instructions, .offer-instructions {
-	width: 20em;
-	color: #535EF5;
+.instructions {
+    width: 20em;
+    margin: 0 auto;
+    text-align: center;
 }
 .search-box {
 	text-align: center;
@@ -155,13 +156,26 @@ button {
 	background-color: inherit;
 	border: .02em solid white;
 }
-.piceat {
-	height: 5em
-	width: 5em;
-}
 .offers {
 	width: 75%;
 	margin: auto;
+	font-family: 'Roboto', sans-serif;
+}
+.offer-instructions {
+    width: 20em;
+    margin: 0 auto;
+    text-align: center;
+}
+.offer-box {
+	display: inline-block;
+    width: 20em;
+    border: .02em solid white;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: center;
+    border-radius: 5px;
+    height: 20em;
+    vertical-align: middle;
 }
 .offer-header {
 	margin-top: 2em;
@@ -169,18 +183,15 @@ button {
 	font-size: 1.2em;
 }
 .first-offer {
-	color: #535EF5;
-	font-size: 1.2em;
+
 }
 .second-offer {	
 	background-color: #F5535E;
 	color: white;
 	text-align: center;
 	width: 5em;
-	font-size: 1.2em;
-
 }
-.offer-button {
+.offer-link {
 	margin-top: .5em;
 	margin-bottom: .5em;
 }
@@ -196,10 +207,7 @@ h3 {
 	margin: 2em auto;
 	border-radius: 5px;
 }
-.offer-header {
-	font-size: 1.2;
-	color: #535EF5;
-}
+
 .offer-name, .offer-address {
 	font-size: 1.2;
 	color: #535EF5;

@@ -38,7 +38,9 @@ var locationReducer = function(state, action) {
 		    name: action.name,
 		    rating: action.rating,
 		    phone: action.phone,
-		    variety: action.variety
+		    variety: action.variety,
+		    lat: action.lat,
+		    lng: action.lng
 		})
 	}
 	else if (action.type === actions.FETCH_SUCCESS) {
