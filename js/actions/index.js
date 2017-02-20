@@ -113,7 +113,7 @@ var fetchLocations = function(id, searchText, secondOfferId) {
             var location = data.response.venues;
             var randomLocation = location[Math.floor((Math.random() * location.length-1) + 1)];
             return dispatch(
-                fetchSuccess(id, randomLocation, secondOfferId)
+                fetchSingleLocation(randomLocation.id)
             );
         })
         .catch(function(error) {
@@ -123,36 +123,6 @@ var fetchLocations = function(id, searchText, secondOfferId) {
 };
 
 exports.fetchLocations = fetchLocations;
-
-
-var fetchMap = function(map) {
-    console.log("I was called", map);
-    return function(dispatch) {
-        return fetch(map).then(function(response) {
-            if (response.status < 200 || response.status >= 300) {
-                var error = new Error(response.statusText)
-                error.response = response
-                throw error;
-            }
-            return response;
-        })
-        // .then(function(response) {
-        //     console.log(response);
-        //     return response.json();
-        // })
-        .then(function(data) {
-            console.log(data);
-            return dispatch(
-                fetchMapSuccess(data)
-            );
-        })
-        .catch(function(error) {
-           console.log(error);
-        });
-    }
-};
-
-exports.fetchMap = fetchMap;
 
 
 var fetchSingleLocation = function(id) {
@@ -192,6 +162,34 @@ var fetchSingleLocation = function(id) {
 exports.fetchSingleLocation = fetchSingleLocation;
 
 
+var fetchMap = function(map) {
+    console.log("I was called", map);
+    return function(dispatch) {
+        return fetch(map).then(function(response) {
+            if (response.status < 200 || response.status >= 300) {
+                var error = new Error(response.statusText)
+                error.response = response
+                throw error;
+            }
+            return response;
+        })
+        // .then(function(response) {
+        //     console.log(response);
+        //     return response.json();
+        // })
+        .then(function(data) {
+            console.log(data);
+            return dispatch(
+                fetchMapSuccess(data)
+            );
+        })
+        .catch(function(error) {
+           console.log(error);
+        });
+    }
+};
+
+exports.fetchMap = fetchMap;
 
 
 
