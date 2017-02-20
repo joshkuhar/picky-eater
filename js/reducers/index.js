@@ -4,13 +4,15 @@ var initialState = {
 	categories: "",
 	searchText: "",
     address: "",
+    city: "",
     name: "",
     rating: "",
     phone: "",
     variety: "",
     image: "",
     secondOfferId: "",
-    chose: ""
+    chose: "",
+    canonicalUrl: ""
 
 };
 
@@ -56,13 +58,15 @@ var locationReducer = function(state, action) {
 	else if (action.type === actions.FETCH_SINGLE_LOCATION_SUCCESS) {
 		return Object.assign({}, state, {
             address: action.address,
+            city: action.city,
 		    name: action.name,
 		    rating: action.rating,
 		    phone: action.phone,
 		    variety: action.variety,
 		    image: action.image,
 		    lat: action.lat,
-		    lng: action.lng
+		    lng: action.lng,
+		    canonicalUrl: action.canonicalUrl
 		})
 	}
 

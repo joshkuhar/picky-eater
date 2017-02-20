@@ -39,11 +39,11 @@ body {
     margin-right: .5em;
 }
 .nav-bar-item:hover {
-	background-color: #E91E63;
+	background-color: #DC143C;
 }
 .game-container {
     background-color: #9C0E2B;
-    min-height: 45em;
+    height: 45em;
     color: white;
     padding-top: 2em;
 }
@@ -52,6 +52,7 @@ body {
 	text-align: center;
 	margin-bottom: 2em;
 	color: lightgray;
+	letter-spacing: .02em;
 }
 .main-photo{
     background-image: url(../assets/food-plate.jpg);
@@ -74,9 +75,17 @@ body {
     left: 0;
 }
 .instructions {
-    width: 20em;
+    width: 25em;
     margin: 0 auto;
-    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: lightgray;
+    font-size: 1.2em;
+}
+.inline-title {
+	font-family: 'Pacifico', cursive;
+    font-size: 1.2em;
+    text-shadow: -1px 1px darkblue;
 }
 .search-box {
 	text-align: center;
@@ -149,7 +158,7 @@ button {
     margin-bottom: .75em;
     border-radius: 5px;
     font-size: 1.2em;
-    border: .02em solid #535EF5;
+    border: .02em solid #DC143C;
     display: inline-block;
 }
 .category-name:hover {
@@ -201,21 +210,21 @@ button {
     text-align: left;
     margin-left: 14.5em;
     font-weight: 100;
-    color: slategray;
+    color: lightgray;
     font-size: .9em;
 }
 .rating {
     text-align: left;
     margin-left: 14.5em;
     font-weight: 100;
-    color: slategray;
+    color: lightgray;
     font-size: .9em;
 }
 .phone {
     text-align: left;
     margin-left: 14.5em;
     font-weight: 100;
-    color: slategray;
+    color: lightgray;
     font-size: .9em;
 }
 .offer-name {
@@ -288,13 +297,23 @@ h3 {
 	border-radius: 5px;
 }
 
-.offer-name, .offer-address {
+.offer-name {
     color: white;
-    font-size: 1.2em;
+    font-size: 3em;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    margin-top: 1em;
-    margin-left: 14em;	
+    margin-top: .5em;
+    margin-left: 6em;
+    margin-bottom: .3em;
+}	
+.offer-address {
+    color: white;
+    font-size: .9em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    /* margin-top: .75em; */
+    margin-left: 20em;
+    line-height: 1.5em;
 }	
 .final-offer {
     font-weight: 100;
@@ -310,4 +329,36 @@ h3 {
 .g-map{
 	height: 11em;
     float: left;
+}
+.footer {
+	height: 8em;
+	background-color: #5C0819;
+	color: white;
+	text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.attribution {
+
+}
+.legal {
+
+}
+.foursquare{
+
+}
+.foursquare-link{
+	color: lightgray;
+}
+.footer-item {
+	display: inline-block;
+    font-weight: 100;
+    font-size: .9em;
+    margin: 3.75em .5em .5em .5em;
+}
+.can-link {
+	color: slategray;
+    font-size: .4em;
+    text-shadow: none;
+    margin-left: 5em;
+    font-family: 'Roboto', sans-serif;
 }

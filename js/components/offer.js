@@ -13,7 +13,7 @@ var Offer = function(props){
 			<div className="offer-instructions">Your Choices</div>
 			<div className="offer-box">
 			  <img src={props.image} alt="restaurant image" className="restaurant-image" />
-			  <div className="offer-header">Picked For You</div>
+			  <div className="offer-header">Picked<span ><a href={props.canLink} className="can-link">venue on Foursquare</a></span></div>
 			  <div className="first-offer">{props.name}</div>
 			  <div className="variety">{props.variety}</div>
 			  <div className="rating">Foursquare Rating {props.rating}</div>

@@ -26,11 +26,12 @@ var Location = React.createClass({
 		
 		return (
 		<div>
-		  <div className="final-offer">Here's the address!</div>
+		  <div className="final-offer">Here's Your Pick</div>
 			<div className="offer-container">
 			  <img src={locationMap} className="g-map"/>
 			  <div className="offer-name">{this.props.name}</div>
 			  <div className="offer-address">{this.props.address}</div>	
+			  <div className="offer-address">{this.props.city}</div>
 			</div>
 		</div>
 		)
@@ -41,6 +42,7 @@ var mapStateToProps = function(state, props) {
     return {
 		name: state.name,
 		address: state.address,
+		city: state.city,
 		locationId: state.locationId,
 		verified: state.verified,
 		lat: state.lat,

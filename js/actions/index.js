@@ -120,6 +120,7 @@ var fetchLocations = function(id, searchText, secondOfferId) {
         })
         .then(function(data) {
             var location = data.response.venues;
+            console.log(location);
             var randomLocation = location[Math.floor((Math.random() * location.length-1) + 1)];
             return dispatch(
                 fetchSingleLocation(randomLocation.id)
@@ -138,13 +139,15 @@ var fetchSingleLocationSuccess = function(venue){
     return {
         type: FETCH_SINGLE_LOCATION_SUCCESS,
         address: venue.location.address,
+        city: venue.location.city,
         name: venue.name,
         rating: venue.rating,
         phone: venue.contact.formattedPhone,
         variety: venue.categories[0].name,
         lat: venue.location.lat,
         lng: venue.location.lng,
-        image: venue.bestPhoto.prefix + "300x300" + venue.bestPhoto.suffix
+        image: venue.bestPhoto.prefix + "300x300" + venue.bestPhoto.suffix,
+        canonicalUrl: venue.canonicalUrl
 
     }
 };
@@ -168,7 +171,7 @@ var fetchSingleLocation = function(id) {
                 error.response = response
                 throw error;
             }
-            return response;
+            return response;    
         })
         .then(function(response) {
             return response.json();

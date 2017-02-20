@@ -21,7 +21,7 @@ var LocationType = React.createClass({
 	render: function(){
 		return (
 			<div>
-			  <Offer name={this.props.name} onClick={this.onClick} name={this.props.name} address={this.props.address} rating={this.props.rating} phone={this.props.phone} variety={this.props.variety} image={this.props.image}/>
+			  <Offer name={this.props.name} onClick={this.onClick} name={this.props.name} address={this.props.address} rating={this.props.rating} phone={this.props.phone} variety={this.props.variety} image={this.props.image} canLink={this.props.canonicalUrl}/>
 			</div>
 				)
 	}
@@ -41,7 +41,8 @@ var mapStateToProps = function(state, props) {
         cachedLocation: state.cachedLocation,
         secondOfferId: state.secondOfferId,
         firstLocation: state.firstLocation,
-        chose: state.chose
+        chose: state.chose,
+        canonicalUrl: state.canonicalUrl
     };
 };
 
