@@ -16,7 +16,7 @@ var Instructions = require('./components/instructions');
 var Search = require('./components/search-container');
 var CategoryList = require('./components/category-names-list-container');
 var Offer = require('./components/offer-container');
-var OfferDetails = require('./components/offer-details-container');
+var OfferDetails = require('./components/offer-container-details');
 
 var Page404 = require('./components/page404');
 
@@ -29,7 +29,7 @@ var Routes = (
 				<Route path="play"component={CategoryList} />
 				<Route path="play/:locationId" component={Offer} />
 				<Route path="accepted/:choice" component={OfferDetails} />
-			</Route>
+			</Route>	
 	    </Router>
 	</Provider>
 	);

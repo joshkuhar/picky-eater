@@ -32,6 +32,7 @@ var Location = React.createClass({
 			  <div className="offer-name">{this.props.name}</div>
 			  <div className="offer-address">{this.props.address}</div>	
 			  <div className="offer-address">{this.props.city}</div>
+			  <div className="phone">{this.props.phone}</div>
 			</div>
 		</div>
 		)

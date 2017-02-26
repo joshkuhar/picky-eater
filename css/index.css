@@ -222,10 +222,12 @@ button {
 }
 .phone {
     text-align: left;
-    margin-left: 14.5em;
     font-weight: 100;
     color: lightgray;
     font-size: .9em;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 19em;
+    margin-top: 1em;
 }
 .offer-name {
 
@@ -284,7 +286,7 @@ button {
     width: 45em;
     margin: 0 auto;
     border: .02em solid white;
-    height: 11em;
+    height: 12em;
     border-radius: 5px;
 }
 h3 {
@@ -299,11 +301,11 @@ h3 {
 
 .offer-name {
     color: white;
-    font-size: 3em;
+    font-size: 2em;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     margin-top: .5em;
-    margin-left: 6em;
+    margin-left: 8.5em;
     margin-bottom: .3em;
 }	
 .offer-address {
@@ -312,7 +314,7 @@ h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     /* margin-top: .75em; */
-    margin-left: 20em;
+    margin-left: 19em;
     line-height: 1.5em;
 }	
 .final-offer {
@@ -327,7 +329,7 @@ h3 {
     text-align: center;
 }
 .g-map{
-	height: 11em;
+	height: 12em;
     float: left;
 }
 .footer {

@@ -17,7 +17,6 @@ var Offer = function(props){
 			  <div className="first-offer">{props.name}</div>
 			  <div className="variety">{props.variety}</div>
 			  <div className="rating">Foursquare Rating {props.rating}</div>
-			  <div className="phone">{props.phone}</div>
 			  <div>
 				<Link to={"/locations/accepted/first"}><div className="offer-link">I'll Take It</div></Link>
 			  </div>
