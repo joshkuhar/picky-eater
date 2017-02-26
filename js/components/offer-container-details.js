@@ -24,6 +24,8 @@ var Location = React.createClass({
 		var key = "&key=AIzaSyCJoYNYymUXQ4O0QIA4By_MJpRWVEc98B4";
 		var locationMap = map + ll + mapParams + secondLL + key;
 		
+		var rating = this.props.rating ? "Foursquare rating "+this.props.rating : "No Foursquare rating available";
+
 		return (
 		<div>
 		  <div className="final-offer">Here's Your Pick</div>
@@ -32,6 +34,7 @@ var Location = React.createClass({
 			  <div className="offer-name">{this.props.name}</div>
 			  <div className="offer-address">{this.props.address}</div>	
 			  <div className="offer-address">{this.props.city}</div>
+			  <div className="offer-rating">{rating}</div>
 			  <div className="phone">{this.props.phone}</div>
 			</div>
 		</div>

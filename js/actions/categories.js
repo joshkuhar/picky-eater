@@ -39,29 +39,14 @@ var Categories = {
 		shortName: "BBQ"
 	},
 	{
-		place: "Buffet",
-		id: "52e81612bcbc57f1066b79f4",
-		shortName: "Buffet"
-	},
-	{
 		place: "Seafood Restaurant",
 		id: "4bf58dd8d48988d1ce941735",
 		shortName: "Seafood"
-	},
-		{
-		place: "Soup Place",
-		id: "4bf58dd8d48988d1dd931735",
-		shortName: "Soup"
 	},
 	{
 		place: "Steakhouse",
 		id: "4bf58dd8d48988d1cc941735",
 		shortName: "Steakhouse"
-	},
-	{
-		place: "Theme Restaurant",
-		id: "56aa371be4b08b9a8d573538",
-		shortName: "Theme Restaurant"
 	},
 	{
 		place: "Vegetarian / Vegan Restaurant",
@@ -91,11 +76,6 @@ fastFood: [
 			place: "Pizza Place",
 			id: "4bf58dd8d48988d1ca941735",
 			shortName: "Pizza"
-		},
-		{
-			place: "Fish & Chips Shop",
-			id: "4edd64a0c7ddd24ca188df1a",
-			shortName: "Fish & Chips"
 		}
 	]
 };

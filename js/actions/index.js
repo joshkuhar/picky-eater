@@ -119,9 +119,13 @@ var fetchLocations = function(id, searchText, secondOfferId) {
             return response.json();
         })
         .then(function(data) {
-            var location = data.response.venues;
-            console.log(location);
-            var randomLocation = location[Math.floor((Math.random() * location.length-1) + 1)];
+            var venues = data.response.venues;
+            console.log(venues);
+            var venuesIndex = Math.floor((Math.random() * venues.length-1) + 1);
+            var randomLocation = venues[venuesIndex];
+            if (randomLocation.stats.checkinsCount < 5) {
+                randomLocation = venues[0];
+            }
             return dispatch(
                 fetchSingleLocation(randomLocation.id)
             );
