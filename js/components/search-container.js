@@ -11,6 +11,11 @@ var ReactDOM = require('react-dom');
 
 
 var SearchContainer = React.createClass({
+	componentDidMount: function() {
+		if (this.props.chose) {
+			this.props.dispatch(actions.resetAll());
+		}
+	},
 	handleSearchChange: function(event) {
 		this.props.dispatch(actions.changeSearch(event.target.value));
 	},
@@ -36,7 +41,8 @@ var SearchContainer = React.createClass({
 
 var mapStateToProps = function(state, props) {
     return {
-		searchText: state.searchText
+		searchText: state.searchText,
+		chose: state.chose
     };
 };
 

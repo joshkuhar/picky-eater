@@ -7,7 +7,10 @@ body {
 	background-color: white;
 	margin: 0em 0em 0em 0em;
 }
-
+.store-button {
+    z-index: 1;
+    position: relative;
+}
 .headline {
 	font-family: 'Pacifico', cursive;
     color: white;
@@ -50,9 +53,11 @@ body {
 .short-instructions {
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
+    margin: 0 auto;
 	margin-bottom: 2em;
 	color: lightgray;
 	letter-spacing: .02em;
+    width: 26em;
 }
 .main-photo{
     background-image: url(../assets/food-plate.jpg);
@@ -295,7 +300,7 @@ button {
     width: 45em;
     margin: 0 auto;
     border: .02em solid white;
-    height: 12em;
+    height: 13em;
     border-radius: 5px;
 }
 h3 {
@@ -338,7 +343,8 @@ h3 {
     text-align: center;
 }
 .g-map{
-	height: 12em;
+    height: 13em;
+    width: 16em;
     float: left;
 }
 .footer {
@@ -372,4 +378,46 @@ h3 {
     text-shadow: none;
     margin-left: 5em;
     font-family: 'Roboto', sans-serif;
+}
+@media only screen and (max-width: 500px) {
+    .headline {
+        font-size: 4em;
+        text-align: center;
+        width: 5.9em;
+    }
+    .nav-bar {
+        width: 23em;
+    }
+    .nav-bar-item {
+        font-size: 1em;
+    }
+    input {
+        font-size: 1.2em;
+        display: block;
+        width: 12em;
+        margin: 0 auto;
+    }
+    .short-instructions {
+        width: 25em;
+    }
+    .search-locations {
+        font-size: 1.2em;
+        margin-left: 0em;
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .headline {
+        font-size: 3.4em;
+    }
+    .nav-bar {
+        width: 16em;
+    }
+    .nav-bar-item {
+        font-size: .7em;
+    }
+    .short-instructions {
+        font-size: .8em;
+    }
 }

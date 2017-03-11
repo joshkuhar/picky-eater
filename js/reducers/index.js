@@ -55,6 +55,21 @@ var locationReducer = function(state, action) {
 		    image: ""
 		})
 	}
+	else if (action.type === actions.RESET_ALL) {
+		return Object.assign({}, state, {
+			address: "",
+		    name: "",
+		    rating: "",
+		    phone: "",
+		    variety: "",
+		    lat: "",
+		    lng: "",
+		    secondOfferId: "",
+		    categories: "",
+		    image: "",
+		    canonicalUrl: ""
+		})
+	}
 	else if (action.type === actions.FETCH_SINGLE_LOCATION_SUCCESS) {
 		return Object.assign({}, state, {
             address: action.address,

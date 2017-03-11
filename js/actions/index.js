@@ -61,6 +61,15 @@ var resetLocations = function() {
 exports.RESET_LOCATIONS = RESET_LOCATIONS;
 exports.resetLocations = resetLocations;
 
+var RESET_ALL =  'RESET_ALL';
+var resetAll = function(){
+    return {
+        type: RESET_ALL
+    }
+}
+exports.RESET_ALL = RESET_ALL;
+exports.resetAll = resetAll;
+
 var FETCH_SUCCESS = 'FETCH_SUCCESS';
 var fetchSuccess = function(id, data, secondOfferId) {
 	return {

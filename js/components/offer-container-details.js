@@ -16,7 +16,11 @@ var Location = React.createClass({
 			this.props.dispatch(actions.fetchLocations(this.props.secondOfferId, this.props.searchText))
 		}
 	},
+	componentWillUnmount: function() {
+		this.props.dispatch(actions.resetAll());
+	},
 	render: function() {
+		console.log("hmm");
 		var map = "https://maps.googleapis.com/maps/api/staticmap?center=";
 		var ll = this.props.lat + "," + this.props.lng;
 		var mapParams = "&zoom=15&size=400x300&maptype=roadmap&markers=color:red%7Csize:mid%7Clabel:A%7C";
