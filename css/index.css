@@ -379,6 +379,12 @@ h3 {
     margin-left: 5em;
     font-family: 'Roboto', sans-serif;
 }
+@media only screen and (max-width: 700px) {
+    .offer-container {
+        font-size: .8em;
+        width: 90%;
+    }
+}
 @media only screen and (max-width: 500px) {
     .headline {
         font-size: 4em;
@@ -450,6 +456,13 @@ h3 {
         font-size: .6em;
         padding-right: .5em;
     }
+    .offer-container {
+        font-size: .7em;
+        width: 90%;
+    }
+    .footer {
+        font-size: .6em;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -467,5 +480,25 @@ h3 {
     }
     .explain-hidden {
         margin-bottom: 0em;
+    }
+    .offer-container {
+        height: 11em;
+    }
+    .g-map {
+        height: 11em;
+        width: 12em;
+    }
+    .offer-name {
+        font-size: 1.3em;
+        margin-left: 10em;
+    }
+    .offer-address {
+        margin-left: 14.5em;
+    }
+    .offer-rating {
+        margin-left: 16.3em;
+    }
+    .phone {
+        margin-left: 16.3em;
     }
 }
