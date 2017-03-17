@@ -20,6 +20,10 @@ var SearchContainer = React.createClass({
 		this.props.dispatch(actions.changeSearch(event.target.value));
 	},
 	onClick: function(event) {
+		if (this.props.searchText == ""){
+			alert("Please Enter a Location to Search Near");
+			return
+		}
 		event.preventDefault();
 		this.props.dispatch(actions.saveLocation(this.props.searchText));
 		hashHistory.push('/locations/play');
