@@ -24,13 +24,18 @@ var SearchContainer = React.createClass({
 		this.props.dispatch(actions.saveLocation(this.props.searchText));
 		hashHistory.push('/locations/play');
 	},
+	// onSubmit: function(event) {
+	// 	event.preventDefault();
+	// 	this.props.dispatch(actions.saveLocation(this.props.searchText));
+	// 	hashHistory.push('/locations/play');
+	// },
 	render: function() {
 		return (
 			<div className="search-container">
 				<div className="short-instructions">Enter an area you want to search, such as Philadelphia, and then click "Search". </div>
-				  <form className="search-box">
+				  <form className="search-box" id="search-form">
 					<input type="text" placeholder="Search Near" value={this.props.searchText} onChange={this.handleSearchChange} />
-	           	 	<button type="button" className="search-locations" onClick={this.onClick}>
+	           	 	<button type="submit" form="search-form" className="search-locations" onClick={this.onClick}>
 	                	Search
 	            	</button>
 	              </form>
