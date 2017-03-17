@@ -460,6 +460,10 @@ h3 {
         font-size: .7em;
         width: 90%;
     }
+    .instructions {
+        width: 90%;
+        font-size: 1.1em;
+    }
     .footer {
         font-size: .6em;
     }
@@ -500,5 +504,8 @@ h3 {
     }
     .phone {
         margin-left: 16.3em;
+    }
+    .instructions {
+        font-size: .9em;
     }
 }
