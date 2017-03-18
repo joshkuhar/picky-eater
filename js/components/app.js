@@ -5,16 +5,16 @@ var router = require('react-router');
 var Link = router.Link;
 
 var App = React.createClass({
-	// showStore: function(event) {
-	// 	event.preventDefault();
-	// 	// console.log("I was clicked");
-	// 	console.log(store.getState());
-	// },
+	showStore: function(event) {
+		event.preventDefault();
+		// console.log("I was clicked");
+		console.log(store.getState());
+	},
 	render: function(){
 	return(
 		<div>
 			<div className="main-photo">
-				
+				<button onClick={this.showStore} className="store-button">store</button>
 				<h2 className="headline">Picky Eater</h2>
 				<div className="nav-bar">
 				  <Link to={"/locations"} ><div className="nav-bar-item">Home</div></Link>
@@ -37,4 +37,4 @@ var App = React.createClass({
 
 module.exports = App;
 
-//<button onClick={this.showStore} className="store-button">store</button>
+//

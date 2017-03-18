@@ -12,7 +12,7 @@ var Offer = require('./offer');
 var LocationType = React.createClass({
 	componentDidMount: function(){
 		if (this.props.chose) {
-			this.props.dispatch(actions.resetLocations());
+			this.props.dispatch(actions.resetChose());
 			hashHistory.push('/locations');
 			return
 		}

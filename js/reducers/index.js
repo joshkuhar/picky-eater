@@ -70,6 +70,11 @@ var locationReducer = function(state, action) {
 		    canonicalUrl: ""
 		})
 	}
+	else if (action.type === actions.RESET_CHOSE) {
+			return Object.assign({}, state, {
+				chose: ""
+			})
+	}
 	else if (action.type === actions.FETCH_SINGLE_LOCATION_SUCCESS) {
 		return Object.assign({}, state, {
             address: action.address,

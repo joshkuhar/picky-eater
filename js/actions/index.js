@@ -22,7 +22,6 @@ exports.saveLocation = saveLocation;
 
 var GET_CATEGORIES = 'GET_CATEGORIES';
 var getCategories = function(categories) {
-    console.log(categories);
     return {
         type: GET_CATEGORIES,
         categories: categories,
@@ -60,6 +59,15 @@ var resetLocations = function() {
 }
 exports.RESET_LOCATIONS = RESET_LOCATIONS;
 exports.resetLocations = resetLocations;
+
+var RESET_CHOSE = 'RESET_CHOSE';
+var resetChose = function() {
+    return {
+        type: RESET_CHOSE
+    }
+}
+exports.RESET_CHOSE = RESET_CHOSE;
+exports.resetChose = resetChose;
 
 var RESET_ALL =  'RESET_ALL';
 var resetAll = function(){
@@ -129,7 +137,6 @@ var fetchLocations = function(id, searchText, secondOfferId) {
         })
         .then(function(data) {
             var venues = data.response.venues;
-            console.log(venues);
             var venuesIndex = Math.floor((Math.random() * venues.length-1) + 1);
             var randomLocation = venues[venuesIndex];
             if (randomLocation.stats.checkinsCount < 5) {
@@ -148,7 +155,6 @@ exports.fetchLocations = fetchLocations;
 
 var FETCH_SINGLE_LOCATION_SUCCESS = 'FETCH_SINGLE_LOCATION_SUCCESS';
 var fetchSingleLocationSuccess = function(venue){
-    console.log(venue.location.address, venue.name, venue.rating, venue.contact.formattedPhone, venue.categories[0].name);
     return {
         type: FETCH_SINGLE_LOCATION_SUCCESS,
         address: venue.location.address,
@@ -191,7 +197,6 @@ var fetchSingleLocation = function(id) {
         })
         .then(function(data) {
             var venue = data.response.venue;
-            console.log(venue);
             return dispatch(
                 fetchSingleLocationSuccess(venue)
             );
@@ -221,7 +226,6 @@ var fetchMap = function(map) {
         //     return response.json();
         // })
         .then(function(data) {
-            console.log(data);
             return dispatch(
                 fetchMapSuccess(data)
             );

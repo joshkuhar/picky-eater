@@ -13,7 +13,7 @@ var ReactDOM = require('react-dom');
 var SearchContainer = React.createClass({
 	componentDidMount: function() {
 		if (this.props.chose) {
-			this.props.dispatch(actions.resetAll());
+			this.props.dispatch(actions.resetChose());
 		}
 	},
 	handleSearchChange: function(event) {
@@ -28,11 +28,6 @@ var SearchContainer = React.createClass({
 		this.props.dispatch(actions.saveLocation(this.props.searchText));
 		hashHistory.push('/locations/play');
 	},
-	// onSubmit: function(event) {
-	// 	event.preventDefault();
-	// 	this.props.dispatch(actions.saveLocation(this.props.searchText));
-	// 	hashHistory.push('/locations/play');
-	// },
 	render: function() {
 		return (
 			<div className="search-container">
