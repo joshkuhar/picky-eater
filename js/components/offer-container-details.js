@@ -13,7 +13,7 @@ var Location = React.createClass({
 	},
 	componentDidMount: function(){
 		if( this.props.params.choice == "alternate") {
-			this.props.dispatch(actions.fetchLocations(this.props.secondOfferId, this.props.searchText))
+			this.props.dispatch(actions.fetchLocations(this.props.secondOfferId, this.props.searchText)) 	
 		}
 	},
 	componentWillUnmount: function() {
@@ -26,19 +26,22 @@ var Location = React.createClass({
 		var secondLL = this.props.lat + "," + this.props.lng;
 		var key = "&key=AIzaSyCJoYNYymUXQ4O0QIA4By_MJpRWVEc98B4";
 		var locationMap = map + ll + mapParams + secondLL + key;
-		
+		var name = this.props.name ? this.props.name : "No Foursquare name available";
+		var address = this.props.address ? this.props.address : "No Foursquare address available";
+		var city = this.props.city ? this.props.address : "";
 		var rating = this.props.rating ? "Foursquare rating "+this.props.rating : "No Foursquare rating available";
+		var phone = this.props.phone ? this.props.phone : "No phone number available";
 
 		return (
 		<div>
 		  <div className="final-offer">Here's Your Pick</div>
 			<div className="offer-container">
 			  <img src={locationMap} className="g-map"/>
-			  <div className="offer-name">{this.props.name}</div>
-			  <div className="offer-address">{this.props.address}</div>	
-			  <div className="offer-address">{this.props.city}</div>
+			  <div className="offer-name">{name}</div>
+			  <div className="offer-address">{address}</div>	
+			  <div className="offer-address">{city}</div>
 			  <div className="offer-rating">{rating}</div>
-			  <div className="phone">{this.props.phone}</div>
+			  <div className="phone">{phone}</div>
 			</div>
 		</div>
 		)
