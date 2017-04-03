@@ -132,6 +132,15 @@ button {
 	margin: auto;
 	text-align: center;
 }
+.shuffle-instructions {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: lightgray;
+    font-size: .9em;
+}
 .shuffle-button {
     background-color: inherit;
     color: white;
@@ -419,6 +428,9 @@ h3 {
         font-size: 1.2em;
         margin-left: 0em;
         margin-top: 1em;
+    }
+    .shuffle-instructions {
+        font-size: .75em;
     }
     .offer-instructions {
         width: auto;

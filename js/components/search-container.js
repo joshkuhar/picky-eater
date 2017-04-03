@@ -31,7 +31,7 @@ var SearchContainer = React.createClass({
 	render: function() {
 		return (
 			<div className="search-container">
-				<div className="short-instructions">Enter an area you want to search, such as Philadelphia, and then click "Search". </div>
+				<div className="short-instructions">Enter a city or area you want to search for restaraunts. </div>
 				  <form className="search-box" id="search-form">
 					<input type="text" placeholder="Search Near" value={this.props.searchText} onChange={this.handleSearchChange} />
 	           	 	<button type="submit" form="search-form" className="search-locations" onClick={this.onClick}>

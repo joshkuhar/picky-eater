@@ -24,6 +24,7 @@ var CategoryList = React.createClass({
 	render: function() {
 		return(
 				<div className='categories-container'>
+				  <div className="shuffle-instructions">Listed below are the types of restaraunts available. If you'd like other options, click the shuffle button</div>
 				  <button className="shuffle-button" onClick={this.onClick}>shuffle</button>
 				  <CategoryNames categoryList={this.props.categories} />
 				</div>

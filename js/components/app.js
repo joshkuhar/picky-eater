@@ -13,13 +13,14 @@ var App = React.createClass({
 	// 	console.log(store.getState());
 	// },
 	render: function(){
+	var home = this.props.chose ?  <Link to={"/locations"} ><div className="nav-bar-item">Play Again</div></Link> : "";
 	return(
 		<div>
 			<div className="main-photo">
 				<h2 className="headline">Picky Eater</h2>
 				<div className="nav-bar">
-				  <Link to={"/locations"} ><div className="nav-bar-item">Home</div></Link>
-			      <Link to={"/locations/instructions"} ><div className="nav-bar-item">Instructions</div></Link>
+				  <div>{home}</div>
+			      {/* <Link to={"/locations/instructions"} ><div className="nav-bar-item">Instructions</div></Link> */}
 				</div>
 			</div>
 			  <div className="game-container">
@@ -38,12 +39,12 @@ var App = React.createClass({
 
 var mapStateToProps = function(state, props) {
 	return {
-
+		chose: state.chose
 	}
 }
 var Container = connect(mapStateToProps)(App);
 module.exports = Container;
-module.exports = App;
+//module.exports = App;
 
 /*
 

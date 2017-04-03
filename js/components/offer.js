@@ -10,7 +10,7 @@ var Button = require('./button');
 var Offer = function(props){
 	return(
 		<div className="offers">
-			<div className="offer-instructions">Your Choices</div>
+			<div className="offer-instructions">Below are the two restaurants picked for you. You can only choose one of them. If you don't like the first offer, you can pick a random, hidden offer.</div>
 			<div className="offer-box">
 			  <img src={props.image} alt="restaurant image" className="restaurant-image" />
 			  <div className="offer-header">Picked</div>
