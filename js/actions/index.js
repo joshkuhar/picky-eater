@@ -106,8 +106,18 @@ var fetchMapSuccess = function(map){
         map: map
     }
 }
-exports.FETCH_MAP_SUCCESS = 'FETCH_MAP_SUCCESS';
+exports.FETCH_MAP_SUCCESS = FETCH_MAP_SUCCESS;
 exports.fetchMapSuccess = fetchMapSuccess;
+
+var DISPLAY_OFFER_TEXT = 'DISPLAY_OFFER_TEXT';
+var displayOfferText = function(){
+    return {
+        type: DISPLAY_OFFER_TEXT
+    }
+}
+exports.DISPLAY_OFFER_TEXT = DISPLAY_OFFER_TEXT;
+exports.displayOfferText = displayOfferText;
+
 
 var fetchLocations = function(id, searchText, secondOfferId) {
     var p = {

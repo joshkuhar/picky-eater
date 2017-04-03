@@ -13,7 +13,8 @@ var Location = React.createClass({
 	},
 	componentDidMount: function(){
 		if( this.props.params.choice == "alternate") {
-			this.props.dispatch(actions.fetchLocations(this.props.secondOfferId, this.props.searchText)) 	
+			this.props.dispatch(actions.fetchLocations(this.props.secondOfferId, this.props.searchText));
+			this.props.dispatch(actions.displayOfferText()); 	
 		}
 	},
 	componentWillUnmount: function() {
@@ -28,13 +29,14 @@ var Location = React.createClass({
 		var locationMap = map + ll + mapParams + secondLL + key;
 		var name = this.props.name ? this.props.name : "No Foursquare name available";
 		var address = this.props.address ? this.props.address : "No Foursquare address available";
-		var city = this.props.city ? this.props.address : "";
+		var city = this.props.city ? this.props.city : "";
 		var rating = this.props.rating ? "Foursquare rating "+this.props.rating : "No Foursquare rating available";
 		var phone = this.props.phone ? this.props.phone : "No phone number available";
 
 		return (
 		<div>
-		  <div className="final-offer">Here's Your Pick</div>
+		  <div className="final-offer">Here's Your Pick.</div>
+		  <div className="offer-text">{this.props.offerText}</div>
 			<div className="offer-container">
 			  <img src={locationMap} className="g-map"/>
 			  <div className="offer-name">{name}</div>
@@ -43,6 +45,7 @@ var Location = React.createClass({
 			  <div className="offer-rating">{rating}</div>
 			  <div className="phone">{phone}</div>
 			</div>
+			<div className="offer-text">Thanks for playing <span className="inline-title">Picky Eater</span> !</div>
 		</div>
 		)
 	}
@@ -61,7 +64,8 @@ var mapStateToProps = function(state, props) {
         phone: state.phone,
         variety: state.variety,
         secondOfferId: state.secondOfferId,
-        searchText: state.searchText
+        searchText: state.searchText,
+        offerText: state.offerText
     };
 };
 

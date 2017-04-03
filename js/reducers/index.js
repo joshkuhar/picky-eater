@@ -12,7 +12,8 @@ var initialState = {
     image: "",
     secondOfferId: "",
     chose: "",
-    canonicalUrl: ""
+    canonicalUrl: "",
+    offerText: ""
 
 };
 
@@ -37,6 +38,12 @@ var locationReducer = function(state, action) {
 	else if (action.type === actions.CHOICE_MADE) {
 		return Object.assign({}, state, {
 			chose: action.chose
+		})
+	}
+	else if (action.type === actions.DISPLAY_OFFER_TEXT) {
+		var offerText = "If you don't like what we suggested, that's too bad. You shouldn't have been such a picky eater. The other suggestion is gone and you can't go back. However, you can play again and get a new, completely random location.";
+		return Object.assign({}, state, {
+			offerText: offerText
 		})
 	}
 	else if (action.type === actions.RESET_LOCATIONS) {
