@@ -3,6 +3,8 @@ var store = require('../store');
 var Button = require('./button');
 var router = require('react-router');
 var Link = router.Link;
+var connect = require('react-redux').connect;
+var actions = require('../actions/index');
 
 var App = React.createClass({
 	// showStore: function(event) {
@@ -34,8 +36,47 @@ var App = React.createClass({
 	}
 });
 
+var mapStateToProps = function(state, props) {
+	return {
+
+	}
+}
+var Container = connect(mapStateToProps)(App);
+module.exports = Container;
 module.exports = App;
 
 /*
+
+
+var mapStateToProps = function(state, props) {
+    return {
+		name: state.name,
+		address: state.address,
+		city: state.city,
+		locationId: state.locationId,
+		verified: state.verified,
+		lat: state.lat,
+		lng: state.lng,
+        rating: state.rating,
+        phone: state.phone,
+        variety: state.variety,
+        secondOfferId: state.secondOfferId,
+        searchText: state.searchText,
+        offerText: state.offerText
+    };
+};
+
+var Container = connect(mapStateToProps)(Location);
+
+module.exports = Container;
+
+
+
+
+
+
+
+
+
 	<button onClick={this.showStore} className="store-button">store</button>
 */
