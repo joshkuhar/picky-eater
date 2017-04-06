@@ -19,6 +19,15 @@ var instructionsFlag = function() {
 exports.INSTRUCTIONS_FLAG = INSTRUCTIONS_FLAG;
 exports.instructionsFlag = instructionsFlag;
 
+var RESET_INSTRUCTIONS_FLAG = 'RESET_INSTRUCTIONS_FLAG';
+var resetInstructionsFlag = function() {
+    return {
+        type: resetInstructionsFlag
+    }
+};
+exports.RESET_INSTRUCTIONS_FLAG = RESET_INSTRUCTIONS_FLAG;
+exports.resetInstructionsFlag = resetInstructionsFlag;
+
 var SAVE_LOCATION = 'SAVE_LOCATION';
 var saveLocation = function(searchText){
     return {

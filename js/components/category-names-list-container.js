@@ -24,6 +24,11 @@ var CategoryList = React.createClass({
 		event.preventDefault();
 		this.props.dispatch(actions.getCategories(randomCategories()));
 	},
+	componentWillUnmount: function() {
+		if (this.props.instructionsFlag == true) {
+			this.props.dispatch(actions.resetInstructionsFlag());
+		}
+	},
 	render: function() {
 		return(
 				<div className='categories-container'>

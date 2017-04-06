@@ -30,6 +30,11 @@ var locationReducer = function(state, action) {
 			instructionsFlag: true
 		})
 	}
+	else if (action.type === actions.RESET_INSTRUCTIONS_FLAG) {
+		return Object.assign({}, state, {
+			instructionsFlag: false
+		})
+	}
 	else if (action.type === actions.CHANGE_SEARCH) {
 		return Object.assign({}, state, {
 			searchText: action.text

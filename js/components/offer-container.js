@@ -11,6 +11,9 @@ var Offer = require('./offer');
 
 var LocationType = React.createClass({
 	componentDidMount: function(){
+        if (this.props.instructionsFlag == true) {
+            return
+        }
 		if (this.props.chose) {
 			this.props.dispatch(actions.resetChose());
 			hashHistory.push('/locations');
@@ -18,6 +21,7 @@ var LocationType = React.createClass({
 		}
 		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
 	},
+    
 	render: function(){
 		return (
 			<div>
@@ -42,7 +46,8 @@ var mapStateToProps = function(state, props) {
         secondOfferId: state.secondOfferId,
         firstLocation: state.firstLocation,
         chose: state.chose,
-        canonicalUrl: state.canonicalUrl
+        canonicalUrl: state.canonicalUrl,
+        instructionsFlag: state.instructionsFlag
     };
 };
 
