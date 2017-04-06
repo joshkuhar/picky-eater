@@ -8,6 +8,9 @@ var actions = require('../actions/index');
 
 
 var Instructions = React.createClass({
+componentDidMount: function() {
+	this.props.dispatch(actions.instructionsFlag());
+},
 render: function(){
 	return(
 		<div className="instructions">
@@ -19,12 +22,12 @@ render: function(){
 			you can't get it back.</p>
 		</div>
 		)
-  }
+  	}
 });
 	
 var mapStateToProps = function(state, props){
 	return {
-
+		instructionsFlag: state.instructionsFlag
 	}
 }
 var Container = connect(mapStateToProps)(Instructions);

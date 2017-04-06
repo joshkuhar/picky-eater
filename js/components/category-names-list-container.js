@@ -15,6 +15,9 @@ var randomCategories = function(){
 
 var CategoryList = React.createClass({
 	componentDidMount: function() {
+		if (this.props.instructionsFlag == true) {
+			return
+		}
 		this.props.dispatch(actions.getCategories(randomCategories()));
 	},
 	onClick: function(event) {
@@ -34,7 +37,8 @@ var CategoryList = React.createClass({
 
 var mapStateToProps = function(state, props) {
     return {
-        categories: state.categories
+        categories: state.categories,
+        instructionsFlag: state.instructionsFlag
     };
 };
 

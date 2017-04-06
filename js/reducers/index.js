@@ -13,7 +13,8 @@ var initialState = {
     secondOfferId: "",
     chose: "",
     canonicalUrl: "",
-    offerText: ""
+    offerText: "",
+    instructionsFlag: false
 
 };
 
@@ -22,6 +23,11 @@ var locationReducer = function(state, action) {
 	if (action.type === actions.SAVE_LOCATION) {
 		return Object.assign({}, state, {
 			searchText: action.searchText
+		})
+	}
+	else if (action.type === actions.INSTRUCTIONS_FLAG) {
+		return Object.assign({}, state, {
+			instructionsFlag: true
 		})
 	}
 	else if (action.type === actions.CHANGE_SEARCH) {

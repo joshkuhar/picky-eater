@@ -10,6 +10,15 @@ var changeSearch = function(text) {
 exports.CHANGE_SEARCH = CHANGE_SEARCH;
 exports.changeSearch = changeSearch;
 
+var INSTRUCTIONS_FLAG = 'INSTRUCTIONS_FLAG';
+var instructionsFlag = function() {
+    return {
+        type: INSTRUCTIONS_FLAG
+    }
+};
+exports.INSTRUCTIONS_FLAG = INSTRUCTIONS_FLAG;
+exports.instructionsFlag = instructionsFlag;
+
 var SAVE_LOCATION = 'SAVE_LOCATION';
 var saveLocation = function(searchText){
     return {
