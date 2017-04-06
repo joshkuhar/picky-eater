@@ -18,6 +18,9 @@ var Location = React.createClass({
 		}
 	},
 	componentWillUnmount: function() {
+        if (this.props.instructionsFlag) {
+            this.props.dispatch(actions.resetInstructionsFlag());
+        }
 		this.props.dispatch(actions.resetAll());
 	},
 	render: function() {
@@ -65,7 +68,8 @@ var mapStateToProps = function(state, props) {
         variety: state.variety,
         secondOfferId: state.secondOfferId,
         searchText: state.searchText,
-        offerText: state.offerText
+        offerText: state.offerText,
+        instructionsFlag: state.instructionsFlag
     };
 };
 

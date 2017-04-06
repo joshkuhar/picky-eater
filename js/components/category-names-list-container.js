@@ -15,7 +15,7 @@ var randomCategories = function(){
 
 var CategoryList = React.createClass({
 	componentDidMount: function() {
-		if (this.props.instructionsFlag == true) {
+		if (this.props.instructionsFlag) {
 			return
 		}
 		this.props.dispatch(actions.getCategories(randomCategories()));
@@ -25,7 +25,7 @@ var CategoryList = React.createClass({
 		this.props.dispatch(actions.getCategories(randomCategories()));
 	},
 	componentWillUnmount: function() {
-		if (this.props.instructionsFlag == true) {
+		if (this.props.instructionsFlag) {
 			this.props.dispatch(actions.resetInstructionsFlag());
 		}
 	},

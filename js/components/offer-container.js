@@ -11,7 +11,7 @@ var Offer = require('./offer');
 
 var LocationType = React.createClass({
 	componentDidMount: function(){
-        if (this.props.instructionsFlag == true) {
+        if (this.props.instructionsFlag) {
             return
         }
 		if (this.props.chose) {
@@ -21,7 +21,11 @@ var LocationType = React.createClass({
 		}
 		this.props.dispatch(actions.fetchLocations(this.props.params.locationId, this.props.searchText));
 	},
-    
+    componentWillUnmount: function() {
+        if (this.props.instructionsFlag) {
+            this.props.dispatch(actions.resetInstructionsFlag());
+        }
+    },
 	render: function(){
 		return (
 			<div>

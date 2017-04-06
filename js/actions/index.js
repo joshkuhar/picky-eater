@@ -22,7 +22,7 @@ exports.instructionsFlag = instructionsFlag;
 var RESET_INSTRUCTIONS_FLAG = 'RESET_INSTRUCTIONS_FLAG';
 var resetInstructionsFlag = function() {
     return {
-        type: resetInstructionsFlag
+        type: RESET_INSTRUCTIONS_FLAG
     }
 };
 exports.RESET_INSTRUCTIONS_FLAG = RESET_INSTRUCTIONS_FLAG;

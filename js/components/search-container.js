@@ -12,6 +12,9 @@ var ReactDOM = require('react-dom');
 
 var SearchContainer = React.createClass({
 	componentDidMount: function() {
+        if (this.props.instructionsFlag) {
+            return
+        }
 		if (this.props.chose) {
 			this.props.dispatch(actions.resetChose());
 		}
@@ -26,7 +29,14 @@ var SearchContainer = React.createClass({
 		}
 		event.preventDefault();
 		this.props.dispatch(actions.saveLocation(this.props.searchText));
+
 		hashHistory.push('/locations/play');
+	},
+	componentWillUnmount: function() {
+		if (this.props.instructionsFlag) {
+			console.log(this.props.instructionsFlag);
+            this.props.dispatch(actions.resetInstructionsFlag());
+        }
 	},
 	render: function() {
 		return (
@@ -46,7 +56,8 @@ var SearchContainer = React.createClass({
 var mapStateToProps = function(state, props) {
     return {
 		searchText: state.searchText,
-		chose: state.chose
+		chose: state.chose,
+		instructionsFlag: state.instructionsFlag
     };
 };
 

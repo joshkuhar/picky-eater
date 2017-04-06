@@ -14,7 +14,7 @@ var initialState = {
     chose: "",
     canonicalUrl: "",
     offerText: "",
-    instructionsFlag: false
+    instructionsFlag: ""
 
 };
 
@@ -27,12 +27,13 @@ var locationReducer = function(state, action) {
 	}
 	else if (action.type === actions.INSTRUCTIONS_FLAG) {
 		return Object.assign({}, state, {
-			instructionsFlag: true
+			instructionsFlag: "flagged"
 		})
 	}
 	else if (action.type === actions.RESET_INSTRUCTIONS_FLAG) {
+		console.log("reset instructions flag called");
 		return Object.assign({}, state, {
-			instructionsFlag: false
+			instructionsFlag: ""
 		})
 	}
 	else if (action.type === actions.CHANGE_SEARCH) {
