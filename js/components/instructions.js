@@ -1,11 +1,14 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var router = require('react-router');
 var Link = router.Link;
 var store = require('../store');
 var connect = require('react-redux').connect;
 var actions = require('../actions/index');
 
-var Instructions = function(){
+
+var Instructions = React.createClass({
+render: function(){
 	return(
 		<div className="instructions">
 			<p>If you want to dine out but aren't sure where you want to go, let <span className="inline-title">Picky Eater</span> choose for you. Simply enter 
@@ -16,6 +19,13 @@ var Instructions = function(){
 			you can't get it back.</p>
 		</div>
 		)
-}
+  }
+});
+	
+var mapStateToProps = function(state, props){
+	return {
 
-module.exports = Instructions;
+	}
+}
+var Container = connect(mapStateToProps)(Instructions);
+module.exports = Container;
