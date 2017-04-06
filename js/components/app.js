@@ -13,14 +13,15 @@ var App = React.createClass({
 	// 	console.log(store.getState());
 	// },
 	render: function(){
-	var home = this.props.chose ?  <Link to={"/locations"} ><div className="nav-bar-item">Play Again</div></Link> : "";
+	var playAgain = <Link to={"/locations"} ><div className="nav-bar-item">Play Again</div></Link>;
+	var instructions =  <Link to={"/locations/instructions"} ><div className="nav-bar-item">Instructions</div></Link>;
+	var home = this.props.chose ?  playAgain : instructions;
 	return(
 		<div>
 			<div className="main-photo">
 				<h2 className="headline">Picky Eater</h2>
 				<div className="nav-bar">
 				  <div>{home}</div>
-			      {/* <Link to={"/locations/instructions"} ><div className="nav-bar-item">Instructions</div></Link> */}
 				</div>
 			</div>
 			  <div className="game-container">
