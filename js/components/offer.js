@@ -10,7 +10,7 @@ var Button = require('./button');
 var Offer = function(props){
 	return(
 		<div className="offers">
-			<div className="offer-instructions">Below are the two restaurants picked for you. You can only choose one of them. If you don't like the first offer, you can pick a random, hidden offer.</div>
+			<div className="offer-instructions"><p>Below are the two restaurants especially picked for you. If you feel like being a <span className="inline-title">Picky Eater</span>, you can select the hidden offer.</p><p>However, once you select the hidden offer, your selection is final and you won't see the first offer again.</p></div>
 			<div className="offer-box">
 			  <img src={props.image} alt="restaurant image" className="restaurant-image" />
 			  <div className="offer-header">Picked</div>
@@ -25,7 +25,7 @@ var Offer = function(props){
 			<div className="offer-box">
 			  <div className="second-offer">HIDDEN</div>
 			  <div className="offer-header">Get Picky</div>
-			  <div className="explain-hidden">If you select the hidden choice, the first choice will be removed and you won't be able to get it again.</div>
+			  <div className="explain-hidden"></div>
 			  <div>
 				<Link to={"/locations/accepted/alternate"}><div className="offer-link second-link">Show Me What You've Got</div></Link>
 			  </div>
