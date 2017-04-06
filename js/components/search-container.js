@@ -23,7 +23,7 @@ var SearchContainer = React.createClass({
 		this.props.dispatch(actions.changeSearch(event.target.value));
 	},
 	onClick: function(event) {
-		if (this.props.searchText == ""){
+		if (this.props.searchText == "") {
 			alert("Please Enter a Location to Search Near");
 			return
 		}

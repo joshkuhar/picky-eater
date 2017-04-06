@@ -215,6 +215,20 @@ button {
     text-align: left;
     margin-left: 6.5em;
 }
+.fs-link {
+    text-align: left;
+    margin-top: -.75em;
+    margin-left: 13em;
+    margin-bottom: .25em;
+    font-weight: 100;
+    color: lightblue;
+}
+.can-link {
+    color: slategray;
+    font-size: .4em;
+    text-shadow: none;
+    font-family: 'Roboto', sans-serif;
+}
 .restaurant-image {
 	height: 11.5em;
 	float: left;
@@ -345,7 +359,7 @@ h3 {
     font-size: 2em;
     text-transform: capitalize;
     letter-spacing: .05em;
-    color: lightgray;
+    color: white;
     text-align: left;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 1em;
@@ -357,8 +371,8 @@ h3 {
     width: 80%;
     margin: 2em auto;
     text-align: center;
-    color: lightgray;
-    font-size: 1em;
+    color: white;
+    font-size: 1.5em;
 }
 .g-map{
     height: 13em;
@@ -390,13 +404,7 @@ h3 {
     font-size: .9em;
     margin: 3.75em .5em .5em .5em;
 }
-.can-link {
-	color: slategray;
-    font-size: .4em;
-    text-shadow: none;
-    margin-left: 5em;
-    font-family: 'Roboto', sans-serif;
-}
+
 @media only screen and (max-width: 700px) {
     .offer-container {
         font-size: .8em;
@@ -447,7 +455,7 @@ h3 {
         margin-left: 5em;
 
     }
-    .fs-link{
+    .fs-link {
         margin-top: -.5em;
     }
     .can-link {
